@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.BL", "PP4.BL\PP4.BL.csproj", "{97F33ED3-1C65-4703-99A5-1C056455B663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.UI", "PP4.UI\PP4.UI.csproj", "{EEE5F35E-B794-4036-9937-6332E9199F23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.DAL", "PP4.DAL\PP4.DAL.csproj", "{12AC9A6A-EF2D-4472-A9AD-8B49DC077B2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F33ED3-1C65-4703-99A5-1C056455B663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F33ED3-1C65-4703-99A5-1C056455B663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F33ED3-1C65-4703-99A5-1C056455B663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F33ED3-1C65-4703-99A5-1C056455B663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE5F35E-B794-4036-9937-6332E9199F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE5F35E-B794-4036-9937-6332E9199F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE5F35E-B794-4036-9937-6332E9199F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE5F35E-B794-4036-9937-6332E9199F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12AC9A6A-EF2D-4472-A9AD-8B49DC077B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12AC9A6A-EF2D-4472-A9AD-8B49DC077B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12AC9A6A-EF2D-4472-A9AD-8B49DC077B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12AC9A6A-EF2D-4472-A9AD-8B49DC077B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E629DA90-E130-43D9-A445-711DCF8E4DB1}
+	EndGlobalSection
+EndGlobal
