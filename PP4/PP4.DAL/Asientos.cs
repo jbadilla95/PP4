@@ -18,8 +18,6 @@ namespace PP4.DAL
         public Boolean estado { get; set; }
 
         //relaciones
-        [ForeignKey("Id_Sala")]
-
         public virtual Sala Id_Sala { get; set; }
     }
 }
