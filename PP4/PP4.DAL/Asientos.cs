@@ -5,19 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace PP4.DAL
 {
-    class Asientos
+    public class Asientos
     {
         //Propiedades
         [Key]
         
-        public int Id_asientos { get; set; }
-        public int numero { get; set; }
-        public Boolean estado { get; set; }
+        public int ID_Asientos { get; set; }
+        public string Desc_Asientos { get; set; } //descripcion de Asientos 
+        public int Precio { get; set; }
 
-        //relaciones
-        public virtual Sala Id_Sala { get; set; }
+        
+       
+
     }
 }

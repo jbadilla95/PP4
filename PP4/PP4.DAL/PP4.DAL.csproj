@@ -62,11 +62,21 @@
     <Compile Include="Migrations\201911191411065_Propuesta1.designer.cs">
       <DependentUpon>201911191411065_Propuesta1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911260232593_Numero2.cs" />
+    <Compile Include="Migrations\201911260232593_Numero2.designer.cs">
+      <DependentUpon>201911260232593_Numero2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911260243073_Numero3.cs" />
+    <Compile Include="Migrations\201911260243073_Numero3.designer.cs">
+      <DependentUpon>201911260243073_Numero3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pelicula.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sala.cs" />
+    <Compile Include="Sala_Cantidad.cs" />
+    <Compile Include="Tanda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,6 +85,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911191411065_Propuesta1.resx">
       <DependentUpon>201911191411065_Propuesta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911260232593_Numero2.resx">
+      <DependentUpon>201911260232593_Numero2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911260243073_Numero3.resx">
+      <DependentUpon>201911260243073_Numero3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,7 @@ namespace PP4.DAL
     {
         //Propiedades
         [Key]
-        public int Id_Persona { get; set; }
+        public int ID_Persona { get; set; }
         public string Nombre { get; set; }
         public int Cedula { get; set; }
         public string correo  { get; set; }

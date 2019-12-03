@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PP4.DAL
 {
-    class Sala
+   public class Sala
     {
         //Propiedades
         [Key]
-        public int Id_Sala { get; set; }
-        public int capacidad { get; set; }
-        public Boolean Estado { get; set; }
+        public int ID_Sala { get; set; }
+        public string Desc_sala { get; set; }
+        
         
 
         //relaciones

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PP4.DAL
 {
-    class DBCPP4 : DbContext
+   public class DBCPP4 : DbContext
     {
             public DBCPP4() : base("name=CSPrincipal") { }
 
@@ -18,6 +18,8 @@ namespace PP4.DAL
         public virtual DbSet<Pelicula> Pelicula { get; set; }
         public virtual DbSet<Sala> Sala { get; set; }
         public virtual DbSet<Persona> Persona { get; set; }
+
+        public virtual DbSet<Sala_Cantidad> Sala_Cantidad { get; set; }
 
     }
     }

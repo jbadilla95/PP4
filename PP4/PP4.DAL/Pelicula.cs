@@ -8,19 +8,18 @@ using System.Xml.Serialization;
 
 namespace PP4.DAL
 {
-    class Pelicula
+   public class Pelicula
     {
         //Propiedades
         [Key]
-        public int Id_Pelicula { get; set; }
-        public string Titulo { get; set; }
+        public int ID_Pelicula { get; set; }
+        public string Descripcion_Pelicula { get; set; }
         public int Duracion { get; set; }
-        public int Precio { get; set; }
+        public int Estado { get; set; }
 
 
 
-        //Relaciones
-        [XmlIgnore]
-        public virtual ICollection<Sala> Salas { get; set; }
+        
+        
     }
 }
