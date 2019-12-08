@@ -16,7 +16,7 @@ namespace PP4.BL
             {
                 try
                 {
-                    var toDelete = context.Persona.Where(x => x.ID_Persona== Id).SingleOrDefault();
+                    var toDelete = context.Persona.Where(x => x.ID_Persona == Id).SingleOrDefault();
                     if (toDelete != null) // si la tabla no está vacia entonces ingresará a eleiminar , de lo contrario no es necesario que vaya a consultar 
                     {
                         context.Persona.Remove(toDelete);
@@ -111,4 +111,5 @@ namespace PP4.BL
 
             }
         }
+    }
 }

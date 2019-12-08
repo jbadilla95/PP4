@@ -22,7 +22,7 @@ namespace PP4.DAL
 
         //Relaciones
         [XmlIgnore]
-        public virtual ICollection<Persona> ID_Persona { get; set; }
+        
         public virtual ICollection<Tanda> ID_Tanda { get; set; }
 
     }
