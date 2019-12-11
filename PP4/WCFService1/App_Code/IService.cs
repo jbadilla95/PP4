@@ -5,59 +5,38 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Net.Security;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
 [ServiceContract]
 public interface IService
 {
 
-	[OperationContract]
-	string GetData(int value);
-
-	[OperationContract]
-	CompositeType GetDataUsingDataContract(CompositeType composite);
+    [OperationContract]
+    void NuevaPersona(Persona_Service persona_);
 
     [OperationContract]
-    Persona RetornarPersona(int cedula);
+    int EditarPersona(Persona_Service persona_);
+
+    [OperationContract]
+    int EliminarPersona(int ID_Persona);
+
+    [OperationContract]
+    Persona_Service BuscarPersona(int ID_Persona);
+
+    [OperationContract]
+    List<Persona_Service> MostrarPersona();
 
     // TODO: Add your service operations here
 }
 
 // Use a data contract as illustrated in the sample below to add composite types to service operations.
-//todos los metodos que van en la interfaz deben de ir acá 
 [DataContract]
-public class CompositeType
-{
-	bool boolValue = true;
-	string stringValue = "Hello ";
-
-	[DataMember]
-	public bool BoolValue
-	{
-		get { return boolValue; }
-		set { boolValue = value; }
-	}
-
-	[DataMember]
-	public string StringValue
-	{
-		get { return stringValue; }
-		set { stringValue = value; }
-	}
-}
-
-[DataContract]
-public class Persona
+public class Persona_Service
 {
     
-    string Nombre;
-    int cedula;
-    string correo;
-    string contraseña;
-    bool tipo;
-
     [DataMember]
-    public string Nombre1
+    public string Nombre
     {
         get
         {
@@ -69,45 +48,58 @@ public class Persona
             Nombre = value;
         }
     }
-
     [DataMember]
     public int Cedula
     {
         get
         {
-            return cedula;
+            return Cedula;
         }
 
         set
         {
-            cedula = value;
+            Cedula = value;
         }
     }
     [DataMember]
-    public int Correo
+    public string correo
     {
         get
         {
-            return Correo;
+            return correo;
         }
 
         set
         {
-            Correo = value;
+            correo = value;
         }
     }
-
     [DataMember]
-    public int Contraseña
+    public string contraseña
     {
         get
         {
-            return Contraseña;
+            return contraseña;
         }
 
         set
         {
-            Contraseña = value;
+            contraseña = value;
         }
+    }
+    [DataMember]
+    public Boolean tipo_perfil
+    {
+        get
+        {
+            return tipo_perfil;
+        }
+
+        set
+        {
+            tipo_perfil = value;
+        }
+
     }
 }
+

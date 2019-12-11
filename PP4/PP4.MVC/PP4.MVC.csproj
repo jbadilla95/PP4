@@ -55,9 +55,16 @@
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.21\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,13 +137,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\SalasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewsModels\Persona.cs" />
-    <Compile Include="Models\ViewsModels\Sala.cs" />
+    <Compile Include="Models\ViewsModels\ViewModelTabla.cs" />
+    <Compile Include="Models\ViewsModels\ViewPelicula.cs" />
+    <Compile Include="Models\ViewsModels\ViewPersona.cs" />
+    <Compile Include="Models\ViewsModels\ViewSala.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +159,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\banclo.jpg" />
+    <Content Include="Imagenes\cajas.png" />
+    <Content Include="Imagenes\paisaje.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -214,6 +227,12 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Persona\Index.cshtml" />
+    <Content Include="Views\Persona\About.cshtml" />
+    <Content Include="Views\Persona\Nuevo.cshtml" />
+    <Content Include="Views\Persona\Editar.cshtml" />
+    <Content Include="Views\Pelicula\Index.cshtml" />
+    <Content Include="Views\Pelicula\About.cshtml" />
+    <Content Include="Views\Pelicula\Nuevo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,10 +253,17 @@
       <Project>{97f33ed3-1c65-4703-99a5-1c056455b663}</Project>
       <Name>PP4.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PP4.CM\PP4.CM.csproj">
+      <Project>{890f8654-8537-4e70-9538-e52ea2ebdefc}</Project>
+      <Name>PP4.CM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PP4.DAL\PP4.DAL.csproj">
       <Project>{12ac9a6a-ef2d-4472-a9ad-8b49dc077b2f}</Project>
       <Name>PP4.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

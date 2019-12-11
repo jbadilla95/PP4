@@ -30,7 +30,7 @@ namespace PP4.BL
             }
         }
 
-        public IEnumerable Get()
+        public List<Sala> Get()
         {
             using (DBCPP4 context = new DBCPP4())
             {

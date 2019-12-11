@@ -30,7 +30,7 @@ namespace PP4.BL
             }
         }
 
-        public IEnumerable Get()
+        public List<Pelicula> Get()
         {
             using (DBCPP4 context = new DBCPP4())
             {

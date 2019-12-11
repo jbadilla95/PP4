@@ -1,0 +1,27 @@
+﻿@model List<PP4.MVC.Models.ViewPelicula>
+@{
+    ViewBag.Title = "Pelicula";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items; <!--mando a llamar a la lista -->
+}
+
+<h2>@ViewBag.title</h2>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+        <img src="cine.jpg" alt="Bienvenido" style="width:40px;">
+    </a>
+</nav>
+<div>
+
+</div>
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.DropDownList("Datos", items, "Seleccione una Pelicula", new { @class = "form-control" })
+
+        </div>
+    </div>
+</div>
+

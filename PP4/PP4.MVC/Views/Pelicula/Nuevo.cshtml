@@ -1,0 +1,41 @@
+﻿@model PP4.MVC.Models.ViewPelicula
+@{
+    ViewBag.Title = "Nuevo Film";
+}
+
+<h2>@ViewBag.Title</h2>
+<!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
+@using (Html.BeginForm("Nuevo", "Pelicula", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
+            <div>
+                @Html.ValidationMessageFor(d => d.Descripcion_Pelicula, null, new { @class = "danger" })
+                <div/>
+                <div>
+                    @Html.LabelFor(d => d.Descripcion_Pelicula)
+                    @Html.TextBoxFor(d => d.Descripcion_Pelicula, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Duracion)
+                @Html.TextBoxFor(d => d.Duracion, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Estado)
+                @Html.TextBoxFor(d => d.Estado, "", new { @class = "form-control" })
+
+            </div>
+            
+            <br />
+
+            <div style="text-align:right">
+                <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+            </div>
+
+        </div>
+    </div>
+}
+

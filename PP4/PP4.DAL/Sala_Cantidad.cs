@@ -25,5 +25,8 @@ namespace PP4.DAL
         public virtual ICollection<Sala> ID_sala { get; set; }
         public virtual ICollection<Asientos> ID_asiento { get; set; }
 
+      
+        public virtual ICollection<Tanda> ID_Tanda { get; set; }
+
     }
 }

@@ -18,10 +18,10 @@ namespace PP4.DAL
 
         //relaciones 
 
-        [XmlIgnore]
-        public virtual ICollection<Sala> ID_Sala { get; set; }
-        public virtual ICollection<Horario> ID_Horario { get; set; }
-        public virtual ICollection<Pelicula> ID_Pelicula { get; set; }
+      
+       
+        
+       
 
     }
 }

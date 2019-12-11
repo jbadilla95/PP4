@@ -9,7 +9,7 @@ namespace PP4.BL
 {
    public  interface IRepositorio<T>
     {
-        IEnumerable Get();
+        List<T> Get();
         T GetrByID(int Id);
         void Insert(T item);
         void Delete(int Id);

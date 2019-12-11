@@ -1,0 +1,42 @@
+﻿@model List<PP4.MVC.Models.ViewPersona>
+@{
+    ViewBag.Title = "Datos Usuario";
+}
+<h2>@ViewBag.Title.</h2>
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Persona/Nuevo" class="btn btn-outline-primary">Nuevo</a>
+
+</div>
+
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead class="thead-light">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cedula</th>
+                    <th>Correo</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <td>@oElemento.ID_Persona</td>
+                        <td>@oElemento.Nombre</td>
+                        <td>@oElemento.Cedula</td>
+                        <td>@oElemento.correo</td>
+
+                        <td>
+                            <a class="btn btn-outline-success" href="~/Persona/Editar/@oElemento.ID_Persona">Editar</a>
+                            <a href="~/Persona/Eliminar/@oElemento.ID_Persona" class="btn btn-outline-info" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>
+
+

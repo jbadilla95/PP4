@@ -1,0 +1,51 @@
+﻿@model PP4.MVC.Models.ViewsModels.ViewModelTabla
+@{
+    ViewBag.Title = "Nuevo Usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+<!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
+@using (Html.BeginForm("Nuevo", "Persona", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
+            <div class="alert alert-success">
+                <strong>Success!</strong> This alert box could indicate a successful or positive action.
+            </div>
+            <div>
+                @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "danger" })
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Cedula)
+                @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.correo)
+                @Html.TextBoxFor(d => d.correo, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.contraseña)
+                @Html.TextBoxFor(d => d.contraseña, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.tipo_perfil)
+                @Html.TextBoxFor(d => d.tipo_perfil, "", new { @class = "form-control" })
+
+            </div>
+            <br />
+
+            <div style="text-align:right">
+                <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+            </div>
+
+        </div>
+    </div>
+}
+

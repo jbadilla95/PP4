@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace PP4.BL
 {
     public class Persona_CRUD : IRepositorio<Persona>
@@ -30,7 +32,7 @@ namespace PP4.BL
             }
         }
 
-        public IEnumerable Get()
+        public List<Persona> Get()
         {
             using (DBCPP4 context = new DBCPP4())
             {
@@ -45,6 +47,8 @@ namespace PP4.BL
             }
             return null;
         }
+
+       
 
         public Persona GetrByID(int Id)
         {
@@ -111,5 +115,7 @@ namespace PP4.BL
 
             }
         }
+
+        
     }
 }

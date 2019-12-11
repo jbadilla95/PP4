@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PP4.MVC.Models
 {
-    public class Sala
+    public class ViewSala
     {
         public int ID_Sala { get; set; }
         public string Desc_sala { get; set; }
