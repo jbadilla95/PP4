@@ -136,20 +136,128 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServicioPP4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AsientosController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\SalasController.cs" />
+    <Compile Include="Controllers\TandaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewCompra.cs" />
+    <Compile Include="Models\ViewsModels\ViewAsiento.cs" />
     <Compile Include="Models\ViewsModels\ViewModelTabla.cs" />
     <Compile Include="Models\ViewsModels\ViewPelicula.cs" />
     <Compile Include="Models\ViewsModels\ViewPersona.cs" />
     <Compile Include="Models\ViewsModels\ViewSala.cs" />
+    <Compile Include="Models\ViewsModels\ViewTanda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarAsientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarPeliculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarSalaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.ActualizarTandaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaAsientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaPeliculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaSalaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.AgregaTandaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Asientos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Compra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllAsientosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllPeliculasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllPersonasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllSalasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAllTandasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetAsientosbyidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetbyidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetComprabyidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetPeliculabyidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetSalabyidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.GetTandabyIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Pelicula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Sala.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioPP4\PP4.MVC.ServicioPP4.Tanda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioPP4\Servicio.disco" />
+    <None Include="Connected Services\ServicioPP4\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioPP4\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioPP4\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -159,9 +267,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Imagenes\banclo.jpg" />
-    <Content Include="Imagenes\cajas.png" />
-    <Content Include="Imagenes\paisaje.jpg" />
+    <Content Include="Imagenes\bici.png" />
+    <Content Include="Imagenes\image1.jpg" />
+    <Content Include="Imagenes\image2.jpg" />
+    <Content Include="Imagenes\image3.jpg" />
+    <Content Include="Imagenes\image4.jpg" />
+    <Content Include="Imagenes\image5.jpg" />
+    <Content Include="Imagenes\image6.jpg" />
+    <Content Include="Imagenes\image7.jpg" />
+    <Content Include="Imagenes\images %281%29.png" />
+    <Content Include="Imagenes\images %282%29.png" />
+    <Content Include="Imagenes\images.png" />
+    <Content Include="Imagenes\sit_image.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -184,6 +301,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Connected Services\ServicioPP4\Servicio.wsdl" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -231,8 +349,18 @@
     <Content Include="Views\Persona\Nuevo.cshtml" />
     <Content Include="Views\Persona\Editar.cshtml" />
     <Content Include="Views\Pelicula\Index.cshtml" />
-    <Content Include="Views\Pelicula\About.cshtml" />
     <Content Include="Views\Pelicula\Nuevo.cshtml" />
+    <Content Include="Views\Pelicula\Editar.cshtml" />
+    <Content Include="Views\Salas\Index.cshtml" />
+    <Content Include="Views\Salas\Nuevo.cshtml" />
+    <Content Include="Views\Salas\Editar.cshtml" />
+    <Content Include="Views\Asientos\Index.cshtml" />
+    <Content Include="Views\Asientos\Editar.cshtml" />
+    <Content Include="Views\Asientos\Nuevo.cshtml" />
+    <Content Include="Views\Tanda\Index.cshtml" />
+    <Content Include="Views\Tanda\Nuevo.cshtml" />
+    <Content Include="Views\Tanda\Editar.cshtml" />
+    <Content Include="Views\Compra\Nuevo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioPP4\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

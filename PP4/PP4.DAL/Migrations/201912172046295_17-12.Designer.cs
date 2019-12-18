@@ -6,14 +6,14 @@ namespace PP4.DAL.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class Propuesta1 : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
+    public sealed partial class _1712 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Propuesta1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_1712));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911191411065_Propuesta1"; }
+            get { return "201912172046295_17-12"; }
         }
         
         string IMigrationMetadata.Source

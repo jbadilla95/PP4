@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PP4.MVC.Models.ViewSala>
+@{
+    ViewBag.Title = "Datos Sala";
+}
+<h2>@ViewBag.Title.</h2>
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Salas/Nuevo" class="btn btn-outline-primary">Nuevo</a>
+
+</div>
+
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead class="thead-light">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Descripcion de sala</th>
+                    
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <td>@oElemento.ID_Sala</td>
+                        <td>@oElemento.Desc_sala</td>
+                       
+                        <td>
+                            <a class="btn btn-outline-info" href="~/Salas/Editar/@oElemento.ID_Sala">Editar</a>
+                            <a href="~/Salas/Eliminar/@oElemento.ID_Sala" class="btn btn-outline-danger" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>
+
+

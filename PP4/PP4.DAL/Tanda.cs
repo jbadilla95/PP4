@@ -13,15 +13,15 @@ namespace PP4.DAL
         [Key]
         public int ID_tanda { get; set; }
         public int ID_sala { get; set; }
-        public int ID_horario { get; set; }
         public int ID_pelicula { get; set; }
 
         //relaciones 
 
-      
+
+
        
-        
-       
+
+
 
     }
 }

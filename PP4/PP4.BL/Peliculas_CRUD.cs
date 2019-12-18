@@ -94,6 +94,7 @@ namespace PP4.BL
                     updato.Descripcion_Pelicula = item.Descripcion_Pelicula;
                     updato.Duracion = item.Duracion;
                     updato.Estado = item.Estado;
+                    updato.horario = item.horario;
 
                     //preguntar si hay forma de no hacerlo uno a uno 
 

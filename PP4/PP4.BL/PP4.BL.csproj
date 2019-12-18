@@ -58,8 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asientos_CRUD.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Compra_CRUD.cs" />
+    <Compile Include="CRUD_Tanda.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="Peliculas_CRUD.cs" />
     <Compile Include="Persona_CRUD.cs" />

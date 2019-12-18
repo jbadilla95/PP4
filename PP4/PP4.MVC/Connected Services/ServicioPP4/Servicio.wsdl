@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllPersonas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPersonasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPersonasResult" type="tns:ArrayOfPersona" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersona">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Persona" nillable="true" type="tns:Persona" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Persona">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Persona" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cedula" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tipo_perfil" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaPersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Persona" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaPersonaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarPersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPersonaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Getbyid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetbyidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetbyidResult" type="tns:Persona" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Persona" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPersonaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgregaPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Pelicula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pelicula">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Pelicula" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion_Pelicula" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duracion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="horario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaPeliculaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPeliculas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPeliculasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPeliculasResult" type="tns:ArrayOfPelicula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPelicula">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pelicula" nillable="true" type="tns:Pelicula" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPeliculaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPeliculabyid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeliculabyidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPeliculabyidResult" type="tns:Pelicula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Pelicula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPeliculaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgregaSala">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Sala" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Sala">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Sala" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc_sala" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaSalaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSalas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSalasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSalasResult" type="tns:ArrayOfSala" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSala">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarSala">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSalaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSalabyid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalabyidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalabyidResult" type="tns:Sala" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarSala">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Sala" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarSalaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgregaCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Compra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Compra">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Compra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_tanda" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total_Pagar" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_persona" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaCompraResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCompras">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllComprasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllComprasResult" type="tns:ArrayOfCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCompraResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetComprabyid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComprabyidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetComprabyidResult" type="tns:Compra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Compra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCompraResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgregaAsiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Asientos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Asientos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Asientos" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc_Asientos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaAsientoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAsientos">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAsientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAsientosResult" type="tns:ArrayOfAsientos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAsientos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Asientos" nillable="true" type="tns:Asientos" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarAsientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAsientosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAsientosbyid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAsientosbyidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAsientosbyidResult" type="tns:Asientos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAsiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Asientos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAsientoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTandas">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTandasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTandasResult" type="tns:ArrayOfTanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTanda">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tanda" nillable="true" type="tns:Tanda" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tanda">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_tanda" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_sala" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_pelicula" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgregaTanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Tanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaTandaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarTanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarTandaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTandabyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTandabyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTandabyIDResult" type="tns:Tanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:Tanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTandaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllPersonasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPersonas" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPersonasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPersonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaPersona" />
+  </wsdl:message>
+  <wsdl:message name="AgregaPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPersona" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetbyidSoapIn">
+    <wsdl:part name="parameters" element="tns:Getbyid" />
+  </wsdl:message>
+  <wsdl:message name="GetbyidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetbyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarPersona" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaPelicula" />
+  </wsdl:message>
+  <wsdl:message name="AgregaPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPeliculasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPeliculas" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPeliculasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPeliculasResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPelicula" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPeliculabyidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPeliculabyid" />
+  </wsdl:message>
+  <wsdl:message name="GetPeliculabyidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPeliculabyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarPelicula" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaSalaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaSala" />
+  </wsdl:message>
+  <wsdl:message name="AgregaSalaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaSalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSalasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSalas" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSalasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSalasResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSalaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarSala" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSalaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarSalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalabyidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalabyid" />
+  </wsdl:message>
+  <wsdl:message name="GetSalabyidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalabyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSalaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarSala" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSalaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarSalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaCompra" />
+  </wsdl:message>
+  <wsdl:message name="AgregaCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllComprasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCompras" />
+  </wsdl:message>
+  <wsdl:message name="GetAllComprasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarCompra" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetComprabyidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComprabyid" />
+  </wsdl:message>
+  <wsdl:message name="GetComprabyidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComprabyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarCompra" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaAsientoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaAsiento" />
+  </wsdl:message>
+  <wsdl:message name="AgregaAsientoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaAsientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAsientosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAsientos" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAsientosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAsientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAsientosSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAsientos" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAsientosSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAsientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAsientosbyidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAsientosbyid" />
+  </wsdl:message>
+  <wsdl:message name="GetAsientosbyidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAsientosbyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAsientoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAsiento" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAsientoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAsientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTandasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTandas" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTandasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTandasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaTandaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaTanda" />
+  </wsdl:message>
+  <wsdl:message name="AgregaTandaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaTandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTandaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarTanda" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTandaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarTandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTandabyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTandabyID" />
+  </wsdl:message>
+  <wsdl:message name="GetTandabyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTandabyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTandaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTanda" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTandaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTandaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioSoap">
+    <wsdl:operation name="GetAllPersonas">
+      <wsdl:input message="tns:GetAllPersonasSoapIn" />
+      <wsdl:output message="tns:GetAllPersonasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPersona">
+      <wsdl:input message="tns:AgregaPersonaSoapIn" />
+      <wsdl:output message="tns:AgregaPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPersona">
+      <wsdl:input message="tns:EliminarPersonaSoapIn" />
+      <wsdl:output message="tns:EliminarPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Getbyid">
+      <wsdl:input message="tns:GetbyidSoapIn" />
+      <wsdl:output message="tns:GetbyidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPersona">
+      <wsdl:input message="tns:ActualizarPersonaSoapIn" />
+      <wsdl:output message="tns:ActualizarPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPelicula">
+      <wsdl:input message="tns:AgregaPeliculaSoapIn" />
+      <wsdl:output message="tns:AgregaPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPeliculas">
+      <wsdl:input message="tns:GetAllPeliculasSoapIn" />
+      <wsdl:output message="tns:GetAllPeliculasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <wsdl:input message="tns:EliminarPeliculaSoapIn" />
+      <wsdl:output message="tns:EliminarPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeliculabyid">
+      <wsdl:input message="tns:GetPeliculabyidSoapIn" />
+      <wsdl:output message="tns:GetPeliculabyidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <wsdl:input message="tns:ActualizarPeliculaSoapIn" />
+      <wsdl:output message="tns:ActualizarPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaSala">
+      <wsdl:input message="tns:AgregaSalaSoapIn" />
+      <wsdl:output message="tns:AgregaSalaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalas">
+      <wsdl:input message="tns:GetAllSalasSoapIn" />
+      <wsdl:output message="tns:GetAllSalasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSala">
+      <wsdl:input message="tns:EliminarSalaSoapIn" />
+      <wsdl:output message="tns:EliminarSalaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalabyid">
+      <wsdl:input message="tns:GetSalabyidSoapIn" />
+      <wsdl:output message="tns:GetSalabyidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSala">
+      <wsdl:input message="tns:ActualizarSalaSoapIn" />
+      <wsdl:output message="tns:ActualizarSalaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCompra">
+      <wsdl:input message="tns:AgregaCompraSoapIn" />
+      <wsdl:output message="tns:AgregaCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompras">
+      <wsdl:input message="tns:GetAllComprasSoapIn" />
+      <wsdl:output message="tns:GetAllComprasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCompra">
+      <wsdl:input message="tns:EliminarCompraSoapIn" />
+      <wsdl:output message="tns:EliminarCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComprabyid">
+      <wsdl:input message="tns:GetComprabyidSoapIn" />
+      <wsdl:output message="tns:GetComprabyidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCompra">
+      <wsdl:input message="tns:ActualizarCompraSoapIn" />
+      <wsdl:output message="tns:ActualizarCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaAsiento">
+      <wsdl:input message="tns:AgregaAsientoSoapIn" />
+      <wsdl:output message="tns:AgregaAsientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAsientos">
+      <wsdl:input message="tns:GetAllAsientosSoapIn" />
+      <wsdl:output message="tns:GetAllAsientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAsientos">
+      <wsdl:input message="tns:EliminarAsientosSoapIn" />
+      <wsdl:output message="tns:EliminarAsientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsientosbyid">
+      <wsdl:input message="tns:GetAsientosbyidSoapIn" />
+      <wsdl:output message="tns:GetAsientosbyidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAsiento">
+      <wsdl:input message="tns:ActualizarAsientoSoapIn" />
+      <wsdl:output message="tns:ActualizarAsientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTandas">
+      <wsdl:input message="tns:GetAllTandasSoapIn" />
+      <wsdl:output message="tns:GetAllTandasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaTanda">
+      <wsdl:input message="tns:AgregaTandaSoapIn" />
+      <wsdl:output message="tns:AgregaTandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTanda">
+      <wsdl:input message="tns:EliminarTandaSoapIn" />
+      <wsdl:output message="tns:EliminarTandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTandabyID">
+      <wsdl:input message="tns:GetTandabyIDSoapIn" />
+      <wsdl:output message="tns:GetTandabyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTanda">
+      <wsdl:input message="tns:ActualizarTandaSoapIn" />
+      <wsdl:output message="tns:ActualizarTandaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPersonas">
+      <soap:operation soapAction="http://tempuri.org/GetAllPersonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPersona">
+      <soap:operation soapAction="http://tempuri.org/AgregaPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPersona">
+      <soap:operation soapAction="http://tempuri.org/EliminarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getbyid">
+      <soap:operation soapAction="http://tempuri.org/Getbyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPersona">
+      <soap:operation soapAction="http://tempuri.org/ActualizarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPelicula">
+      <soap:operation soapAction="http://tempuri.org/AgregaPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPeliculas">
+      <soap:operation soapAction="http://tempuri.org/GetAllPeliculas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <soap:operation soapAction="http://tempuri.org/EliminarPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeliculabyid">
+      <soap:operation soapAction="http://tempuri.org/GetPeliculabyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <soap:operation soapAction="http://tempuri.org/ActualizarPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaSala">
+      <soap:operation soapAction="http://tempuri.org/AgregaSala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalas">
+      <soap:operation soapAction="http://tempuri.org/GetAllSalas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSala">
+      <soap:operation soapAction="http://tempuri.org/EliminarSala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalabyid">
+      <soap:operation soapAction="http://tempuri.org/GetSalabyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSala">
+      <soap:operation soapAction="http://tempuri.org/ActualizarSala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCompra">
+      <soap:operation soapAction="http://tempuri.org/AgregaCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompras">
+      <soap:operation soapAction="http://tempuri.org/GetAllCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCompra">
+      <soap:operation soapAction="http://tempuri.org/EliminarCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComprabyid">
+      <soap:operation soapAction="http://tempuri.org/GetComprabyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCompra">
+      <soap:operation soapAction="http://tempuri.org/ActualizarCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaAsiento">
+      <soap:operation soapAction="http://tempuri.org/AgregaAsiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAsientos">
+      <soap:operation soapAction="http://tempuri.org/GetAllAsientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAsientos">
+      <soap:operation soapAction="http://tempuri.org/EliminarAsientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsientosbyid">
+      <soap:operation soapAction="http://tempuri.org/GetAsientosbyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAsiento">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAsiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTandas">
+      <soap:operation soapAction="http://tempuri.org/GetAllTandas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaTanda">
+      <soap:operation soapAction="http://tempuri.org/AgregaTanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTanda">
+      <soap:operation soapAction="http://tempuri.org/EliminarTanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTandabyID">
+      <soap:operation soapAction="http://tempuri.org/GetTandabyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTanda">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPersonas">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPersonas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPersona">
+      <soap12:operation soapAction="http://tempuri.org/AgregaPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPersona">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getbyid">
+      <soap12:operation soapAction="http://tempuri.org/Getbyid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPersona">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaPelicula">
+      <soap12:operation soapAction="http://tempuri.org/AgregaPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPeliculas">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPeliculas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeliculabyid">
+      <soap12:operation soapAction="http://tempuri.org/GetPeliculabyid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaSala">
+      <soap12:operation soapAction="http://tempuri.org/AgregaSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalas">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSalas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSala">
+      <soap12:operation soapAction="http://tempuri.org/EliminarSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalabyid">
+      <soap12:operation soapAction="http://tempuri.org/GetSalabyid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSala">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCompra">
+      <soap12:operation soapAction="http://tempuri.org/AgregaCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompras">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCompra">
+      <soap12:operation soapAction="http://tempuri.org/EliminarCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComprabyid">
+      <soap12:operation soapAction="http://tempuri.org/GetComprabyid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCompra">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaAsiento">
+      <soap12:operation soapAction="http://tempuri.org/AgregaAsiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAsientos">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAsientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAsientos">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAsientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsientosbyid">
+      <soap12:operation soapAction="http://tempuri.org/GetAsientosbyid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAsiento">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAsiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTandas">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTandas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaTanda">
+      <soap12:operation soapAction="http://tempuri.org/AgregaTanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTanda">
+      <soap12:operation soapAction="http://tempuri.org/EliminarTanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTandabyID">
+      <soap12:operation soapAction="http://tempuri.org/GetTandabyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTanda">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="ServicioSoap" binding="tns:ServicioSoap">
+      <soap:address location="https://localhost:44340/Servicio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioSoap12" binding="tns:ServicioSoap12">
+      <soap12:address location="https://localhost:44340/Servicio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

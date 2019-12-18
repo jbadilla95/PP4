@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PP4.MVC.Models.ViewsModels.ViewTanda>
+
+@{
+    ViewBag.Title = "Tandas Informacion";
+}
+<h2>@ViewBag.Title.</h2>
+<style>
+    .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+   
+</style>
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Tanda/Nuevo" class="btn btn-outline-primary">Nuevo</a>
+
+</div>
+
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead class="thead-light">
+
+                <tr>
+                    <th>ID</th>
+                    <th>ID_Sala</th>
+                    <th>ID_Horario</th>
+                    <th>ID_Pelicula</th>
+
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+            <tr>
+                
+                <td>@oElemento.ID_tanda</td>
+                <td>@oElemento.ID_horario</td>
+                <td>@oElemento.ID_pelicula</td>
+                <td>@oElemento.ID_sala</td>
+
+                <td>
+                    <a class="btn btn-outline-info" href="~/Tanda/Editar/@oElemento.ID_tanda">Editar</a>
+                    <a href="~/Tanda/Eliminar/@oElemento.ID_tanda" class="btn btn-outline-danger" role="button">Eliminar</a>
+                    <a href="~/Compra/Index" class="btn btn-outline-info" role="button">Comprar</a>
+                </td>
+            </tr>
+                }
+        </table>
+        <div></div>
+        <table width="75" border="0">
+            <tr>
+                
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo/" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image1.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 5:00pm, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image2.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 5:00pm, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image3.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 2:00pm, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image4.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 11:00am, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image5.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 10:00am, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image6.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 4:00am, Duracion: 2 Horas</span></th>
+             <div class="tooltip"></div><th><a href="~/Compra/Nuevo" class="btn btn-outline-info" role="button">Comprar</a><img src="~/Imagenes/image7.jpg" width="160" /><span class="tooltiptext">Precio: 3800,Hora Inicio: 4:00am, Duracion: 2 Horas</span></th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

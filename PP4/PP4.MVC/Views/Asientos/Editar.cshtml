@@ -1,0 +1,39 @@
+﻿@model PP4.MVC.Models.ViewsModels.ViewAsiento
+
+<!--Acá es lo que estoy recibiendo-->
+@{
+    ViewBag.Title = "Editar Catalogo de Asientos";
+}
+
+<h2>@ViewBag.Title</h2>
+<!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
+@using (Html.BeginForm("Editar", "Asientos", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
+            @Html.HiddenFor(d => d.ID_Asientos) <!--Me guardará el ID y se irá en la misma solicitud que estoy creando-->
+            <div>
+                @Html.ValidationMessageFor(d => d.Desc_Asientos, null, new { @class = "danger" })
+                @Html.LabelFor(d => d.Desc_Asientos)
+                @Html.TextBoxFor(d => d.Desc_Asientos, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.ValidationMessageFor(d => d.Precio, null, new { @class = "danger" })
+                @Html.LabelFor(d => d.Precio)
+                @Html.TextBoxFor(d => d.Precio, "", new { @class = "form-control" })
+
+            </div>
+
+
+
+            <br />
+
+            <div style="text-align:right">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+
+        </div>
+    </div>
+}

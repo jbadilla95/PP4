@@ -104,7 +104,7 @@ namespace PP4.BL
                     //preguntar si hay forma de no hacerlo uno a uno 
 
 
-                    //context.Entry(updato).State = System.Data.Entity.EntityState.Modified; // le estoy diciendo al entity que fue cambiado 
+                    context.Entry(updato).State = System.Data.Entity.EntityState.Modified; // le estoy diciendo al entity que fue cambiado 
 
                     context.SaveChanges();
                 }

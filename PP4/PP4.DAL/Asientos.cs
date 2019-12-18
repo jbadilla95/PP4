@@ -18,8 +18,8 @@ namespace PP4.DAL
         public string Desc_Asientos { get; set; } //descripcion de Asientos 
         public int Precio { get; set; }
 
+
         
-       
 
     }
 }

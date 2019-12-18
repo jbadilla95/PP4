@@ -1,27 +1,42 @@
-﻿@model List<PP4.MVC.Models.ViewPelicula>
+﻿@model IEnumerable<PP4.MVC.Models.ViewPelicula>
 @{
-    ViewBag.Title = "Pelicula";
-    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items; <!--mando a llamar a la lista -->
+    ViewBag.Title = "Datos Pelicula";
 }
-
-<h2>@ViewBag.title</h2>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="#">
-        <img src="cine.jpg" alt="Bienvenido" style="width:40px;">
-    </a>
-</nav>
-<div>
+<h2>@ViewBag.Title.</h2>
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Pelicula/Nuevo" class="btn btn-outline-primary">Nuevo</a>
 
 </div>
 
-<div>
-    <div class="row">
-        <div class="col-md-12">
-            @Html.DropDownList("Datos", items, "Seleccione una Pelicula", new { @class = "form-control" })
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead class="thead-light">
 
-        </div>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Pelicula</th>
+                    <th>Duracion</th>
+                    <th>Disponibilidad</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <td>@oElemento.ID_Pelicula</td>
+                        <td>@oElemento.Descripcion_Pelicula</td>
+                        <td>@oElemento.Duracion</td>
+                        <td>@oElemento.Estado</td>
+
+                        <td>
+                            <a class="btn btn-outline-info" href="~/Pelicula/Editar/@oElemento.ID_Pelicula">Editar</a>
+                            <a href="~/Pelicula/Eliminar/@oElemento.ID_Pelicula" class="btn btn-outline-danger" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+        </table>
     </div>
 </div>
+
 

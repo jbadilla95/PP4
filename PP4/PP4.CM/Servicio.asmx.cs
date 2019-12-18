@@ -67,7 +67,8 @@ namespace PP4.CM
         public void AgregaPelicula(Pelicula item)
         {
             Peliculas_CRUD per = new Peliculas_CRUD();
-
+            
+            
             per.Insert(item);
         }
 
@@ -185,7 +186,89 @@ namespace PP4.CM
             per.Update(item);
         }
         #endregion
+        #region CRUD Asientos
+        [WebMethod]
+        public void AgregaAsiento(Asientos item)
+        {
+             Asientos_CRUD per = new Asientos_CRUD();
 
+            per.Insert(item);
+        }
+
+        [WebMethod]
+        public List<Asientos> GetAllAsientos()
+        {
+            Asientos_CRUD per = new Asientos_CRUD();
+
+            return per.Get();
+        }
+
+        [WebMethod]
+        public void EliminarAsientos(int id)
+        {
+            Asientos_CRUD per = new Asientos_CRUD();
+
+            per.Delete(id);
+        }
+
+        [WebMethod]
+        public Asientos GetAsientosbyid(int id)
+        {
+            Asientos_CRUD per = new Asientos_CRUD();
+
+            return per.GetrByID(id);
+        }
+
+        [WebMethod]
+        public void ActualizarAsiento(Asientos item)
+        {
+            Asientos_CRUD per = new Asientos_CRUD();
+
+            per.Update(item);
+        }
+        #endregion
+        #region Tandas
+
+        [WebMethod]
+        public List<Tanda> GetAllTandas()
+        {
+            CRUD_Tanda per = new CRUD_Tanda();
+
+            return per.Get();
+        }
+
+        [WebMethod]
+        public void AgregaTanda(Tanda item)
+        {
+            CRUD_Tanda per = new CRUD_Tanda();
+
+            per.Insert(item);
+        }
+
+        [WebMethod]
+        public void EliminarTanda(int id)
+        {
+            CRUD_Tanda per = new CRUD_Tanda();
+
+            per.Delete(id);
+        }
+
+        [WebMethod]
+        public Tanda GetTandabyID(int id)
+        {
+            CRUD_Tanda per = new CRUD_Tanda();
+
+            return per.GetrByID(id);
+        }
+
+        [WebMethod]
+        public void ActualizarTanda(Tanda item)
+        {
+            CRUD_Tanda per = new CRUD_Tanda();
+
+            per.Update(item);
+        }
+        #endregion
 
     }
 }

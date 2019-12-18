@@ -14,19 +14,16 @@ namespace PP4.DAL
         [Key]
         public int ID_SCantidad { get; set; }
         public int ID_Sala { get; set; }
-
         public int ID_Asiento { get; set; }
         public int Cantidad_total { get; set; }
         public int Cantidad_disponible { get; set; }
 
-       
+
+
 
         [XmlIgnore]
-        public virtual ICollection<Sala> ID_sala { get; set; }
-        public virtual ICollection<Asientos> ID_asiento { get; set; }
+        public virtual ICollection<Asientos> ID_Asientos { get; set; }
 
-      
-        public virtual ICollection<Tanda> ID_Tanda { get; set; }
 
     }
 }

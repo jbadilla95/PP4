@@ -1,0 +1,43 @@
+﻿
+@model PP4.MVC.Models.ViewCompra
+
+
+
+@{
+    ViewBag.Title = "Compra";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Compra", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
+            <div>
+                @Html.LabelFor(d => d.ID_persona)
+                @Html.DropDownList("ID_persona", items, "Seleccione un Usuario", new { @class = "form-control" })
+            </div>
+            
+            <br/> <!--Usado para dar espacios-->
+            <div>
+                <!--Campo para la fecha-->
+                @Html.Label("Seleccione una Fecha de compra") <br />
+                <input type="date" name="Fecha de Compra" min="2019-12-17" max="2019-12-31" />
+            </div>
+          <br/>
+          <div>
+              <!--Cantidad de Entradas-->
+              <label for="Total_Pagar">Cantidad de Entradas</label> <br/>
+              <input type="number" name="Total_Pagar" value="1" min="1" max="10" step="1" />
+
+          </div>
+            <br />
+
+            <div style="text-align:right">
+                <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+            </div>
+
+        </div>
+    </div>
+}

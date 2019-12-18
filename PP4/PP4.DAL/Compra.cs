@@ -21,9 +21,9 @@ namespace PP4.DAL
 
 
         //Relaciones
-        [XmlIgnore]
-        
-        public virtual ICollection<Tanda> ID_Tanda { get; set; }
 
+        [XmlIgnore]
+
+        public virtual ICollection<Tanda> ID_Tanda { get; set; }
     }
 }

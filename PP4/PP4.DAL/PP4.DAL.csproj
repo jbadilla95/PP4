@@ -57,15 +57,6 @@
     <Compile Include="Asientos.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="DBCPP4.cs" />
-    <Compile Include="Horario.cs" />
-    <Compile Include="Migrations\201911191411065_Propuesta1.cs" />
-    <Compile Include="Migrations\201911191411065_Propuesta1.designer.cs">
-      <DependentUpon>201911191411065_Propuesta1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911260232593_Numero2.cs" />
-    <Compile Include="Migrations\201911260232593_Numero2.designer.cs">
-      <DependentUpon>201911260232593_Numero2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201911260243073_Numero3.cs" />
     <Compile Include="Migrations\201911260243073_Numero3.designer.cs">
       <DependentUpon>201911260243073_Numero3.cs</DependentUpon>
@@ -77,6 +68,22 @@
     <Compile Include="Migrations\201912101837225_CambioBD.cs" />
     <Compile Include="Migrations\201912101837225_CambioBD.designer.cs">
       <DependentUpon>201912101837225_CambioBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912131820321_13Dciembre.cs" />
+    <Compile Include="Migrations\201912131820321_13Dciembre.designer.cs">
+      <DependentUpon>201912131820321_13Dciembre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912161518073_16_diciembre.cs" />
+    <Compile Include="Migrations\201912161518073_16_diciembre.designer.cs">
+      <DependentUpon>201912161518073_16_diciembre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912172046295_17-12.cs" />
+    <Compile Include="Migrations\201912172046295_17-12.designer.cs">
+      <DependentUpon>201912172046295_17-12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912172134530_18-12.cs" />
+    <Compile Include="Migrations\201912172134530_18-12.designer.cs">
+      <DependentUpon>201912172134530_18-12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pelicula.cs" />
@@ -116,12 +123,6 @@
     <None Include="Scripts\umd\popper.min.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911191411065_Propuesta1.resx">
-      <DependentUpon>201911191411065_Propuesta1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911260232593_Numero2.resx">
-      <DependentUpon>201911260232593_Numero2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911260243073_Numero3.resx">
       <DependentUpon>201911260243073_Numero3.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +131,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912101837225_CambioBD.resx">
       <DependentUpon>201912101837225_CambioBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912131820321_13Dciembre.resx">
+      <DependentUpon>201912131820321_13Dciembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912161518073_16_diciembre.resx">
+      <DependentUpon>201912161518073_16_diciembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912172046295_17-12.resx">
+      <DependentUpon>201912172046295_17-12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912172134530_18-12.resx">
+      <DependentUpon>201912172134530_18-12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
