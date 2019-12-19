@@ -4,9 +4,9 @@
 }
 <h2>@ViewBag.Title.</h2>
 
- 
+
 <div class="row" style="text-align:left;padding:3px">
-    <a href="~/Salas/Nuevo" class="btn btn-outline-success">Nuevo</a>
+    <a href="~/Salas/Nuevo" class="btn btn-outline-info">Nuevo</a>
 
 </div>
 
@@ -33,15 +33,24 @@
 
 
                         <td>
-                            <a class="btn btn-outline-info" href="~/Salas/Editar/@oElemento.ID_SCantidad">Editar</a>
-                            <a href="~/Salas/Eliminar/@oElemento.ID_SCantidad" class="btn btn-outline-danger" role="button">Eliminar</a>
-                            <a class="btn btn-outline-secondary" href="~/Pelicula/Verifica_peli/@oElemento.ID_SCantidad">Verificar Pelicula</a>
+                            <a class="w3-button w3-black w3-margin-bottom" href="~/Salas/Editar/@oElemento.ID_SCantidad">Editar</a>
+                            <a href="~/Salas/Eliminar/@oElemento.ID_SCantidad" class="w3-button w3-black w3-margin-bottom" role="button">Eliminar</a>
+                            <a class="w3-button w3-black w3-margin-bottom" href="~/Pelicula/Verifica_peli/@oElemento.ID_SCantidad">Verificar Pelicula</a>
                         </td>
                     </tr>
                 }
         </table>
     </div>
 </div>
+<br/>
 
-
-
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Jeison Badilla 2019</p>
+</footer>

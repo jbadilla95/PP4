@@ -173,6 +173,23 @@ namespace PP4.CM
         }
 
         [WebMethod]
+        public List<Compra> GetcomprasbyIDPersona(int id)
+        {
+            Compra_CRUD per = new Compra_CRUD();
+
+            return per.GetComprabyIDPersona(id);
+        }
+
+        [WebMethod]
+        public List<Compra> GetcomprasbyIDSala(int id)
+        {
+            Compra_CRUD per = new Compra_CRUD();
+
+            return per.GetComprabyIDSala(id);
+        }
+
+
+        [WebMethod]
         public void EliminarCompra(int id)
         {
             Compra_CRUD per = new Compra_CRUD();

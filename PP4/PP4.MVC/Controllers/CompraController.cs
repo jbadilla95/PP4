@@ -126,6 +126,54 @@ namespace PP4.MVC.Controllers
            
         }
 
+        public ActionResult ReportebyPersona(int id)
+        {
+            ServicioSoapClient client = new ServicioSoapClient();
+            var listapeliculas = client.GetcomprasbyIDPersona(id);
+            List<ViewCompra> lista = new List<ViewCompra>();
+
+            foreach (Compra item in listapeliculas)
+                lista.Add(new ViewCompra()
+                {
+                    Descripcion_peli = item.Descripcion_peli,
+                    ID_sala=item.ID_sala,
+                    ID_persona=item.ID_persona,
+                    Fecha = item.Fecha,
+                    ID_Compra=item.ID_Compra,
+                    Total_Pagar=item.Total_Pagar                                      
+                });
+
+
+            return View(lista);
+
+        }
+
+
+
+        public ActionResult ReportebySala(int id)
+        {
+            ServicioSoapClient client = new ServicioSoapClient();
+            var listapeliculas = client.GetcomprasbyIDSala(id);
+            List<ViewCompra> lista = new List<ViewCompra>();
+
+            foreach (Compra item in listapeliculas)
+                lista.Add(new ViewCompra()
+                {
+                    Descripcion_peli = item.Descripcion_peli,
+                    ID_sala = item.ID_sala,
+                    ID_persona = item.ID_persona,
+                    Fecha = item.Fecha,
+                    ID_Compra = item.ID_Compra,
+                    Total_Pagar = item.Total_Pagar
+
+
+                });
+
+
+            return View(lista);
+
+        }
+
         //debe de existir un metodo que me devuelva a la normalidad la cantidad disponible luego de que se acabe el dia de venta
     }
 }

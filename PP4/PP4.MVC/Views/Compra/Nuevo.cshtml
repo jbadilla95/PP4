@@ -6,6 +6,7 @@
 }
 
 <h2>@ViewBag.Title</h2>
+<a href="~/Salas/Index" class="btn btn-outline-primary">Regresar</a>
 <!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
 @using (Html.BeginForm("Nuevo", "Compra", FormMethod.Post))
 {
@@ -29,25 +30,32 @@
                 @Html.TextBoxFor(d => d.ID_sala, "", new { @class = "form-control" })
 
             </div>
-            <br/>
+            <br />
             <div>
-                @Html.LabelFor(d => d.Fecha)<br/>
+                @Html.LabelFor(d => d.Fecha)<br />
                 <input type="date" name="fecha" min="2019-12-18"
                        max="2019-12-31" step="1">
 
             </div>
-            <br/>
+            <br />
 
             <div>
-                @Html.LabelFor(d => d.Total_Pagar)<br/>
+                @Html.LabelFor(d => d.Total_Pagar)<br />
                 <input type="number" name="Total_Pagar" value="0" min="1"
                        max="4" step="1">
 
             </div>
             <br />
 
+            <div>
+                @Html.Label("Precio por Entrada")<br />
+                <input type="number" name="Precio" value="3800" readonly><br>
+
+            </div>
+            <br />
+
             <div style="text-align:right">
-                <input value="Comprar" class="btn btn-primary" type="submit" />
+                <input value="Comprar" class="w3-button w3-black w3-margin-bottom" type="submit" />
             </div>
 
         </div>

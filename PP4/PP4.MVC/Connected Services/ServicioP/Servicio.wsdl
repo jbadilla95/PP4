@@ -256,6 +256,34 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetcomprasbyIDPersona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetcomprasbyIDPersonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetcomprasbyIDPersonaResult" type="tns:ArrayOfCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetcomprasbyIDSala">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetcomprasbyIDSalaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetcomprasbyIDSalaResult" type="tns:ArrayOfCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="EliminarCompra">
         <s:complexType>
           <s:sequence>
@@ -532,6 +560,18 @@
   <wsdl:message name="GetAllComprasSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllComprasResponse" />
   </wsdl:message>
+  <wsdl:message name="GetcomprasbyIDPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetcomprasbyIDPersona" />
+  </wsdl:message>
+  <wsdl:message name="GetcomprasbyIDPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetcomprasbyIDPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetcomprasbyIDSalaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetcomprasbyIDSala" />
+  </wsdl:message>
+  <wsdl:message name="GetcomprasbyIDSalaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetcomprasbyIDSalaResponse" />
+  </wsdl:message>
   <wsdl:message name="EliminarCompraSoapIn">
     <wsdl:part name="parameters" element="tns:EliminarCompra" />
   </wsdl:message>
@@ -682,6 +722,14 @@
     <wsdl:operation name="GetAllCompras">
       <wsdl:input message="tns:GetAllComprasSoapIn" />
       <wsdl:output message="tns:GetAllComprasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDPersona">
+      <wsdl:input message="tns:GetcomprasbyIDPersonaSoapIn" />
+      <wsdl:output message="tns:GetcomprasbyIDPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDSala">
+      <wsdl:input message="tns:GetcomprasbyIDSalaSoapIn" />
+      <wsdl:output message="tns:GetcomprasbyIDSalaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="EliminarCompra">
       <wsdl:input message="tns:EliminarCompraSoapIn" />
@@ -893,6 +941,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllCompras">
       <soap:operation soapAction="http://tempuri.org/GetAllCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDPersona">
+      <soap:operation soapAction="http://tempuri.org/GetcomprasbyIDPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDSala">
+      <soap:operation soapAction="http://tempuri.org/GetcomprasbyIDSala" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1175,6 +1241,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllCompras">
       <soap12:operation soapAction="http://tempuri.org/GetAllCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDPersona">
+      <soap12:operation soapAction="http://tempuri.org/GetcomprasbyIDPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetcomprasbyIDSala">
+      <soap12:operation soapAction="http://tempuri.org/GetcomprasbyIDSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

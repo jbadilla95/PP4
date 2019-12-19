@@ -231,6 +231,12 @@
     <Content Include="Connected Services\ServicioP\PP4.MVC.ServicioP.GetComprabyidResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioP\PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioP\PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServicioP\PP4.MVC.ServicioP.GetPeliculabyidResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -277,10 +283,14 @@
     <Content Include="Imagenes\cinema4.jpg" />
     <Content Include="Imagenes\image3.jpg" />
     <Content Include="Imagenes\image6.jpg" />
+    <Content Include="Imagenes\image7.jpg" />
     <Content Include="Imagenes\images %281%29.png" />
     <Content Include="Imagenes\images.jpg" />
     <Content Include="Imagenes\la.jpg" />
     <Content Include="Imagenes\ny.jpg" />
+    <Content Include="Imagenes\Wall1.jpg" />
+    <Content Include="Imagenes\Wall2.jpg" />
+    <Content Include="Imagenes\Wall3.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -365,6 +375,8 @@
     <Content Include="Views\Salas\Nuevo.cshtml" />
     <Content Include="Views\Salas\Editar.cshtml" />
     <Content Include="Views\Compra\Reporte.cshtml" />
+    <Content Include="Views\Compra\ReportebyPersona.cshtml" />
+    <Content Include="Views\Compra\ReportebySala.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

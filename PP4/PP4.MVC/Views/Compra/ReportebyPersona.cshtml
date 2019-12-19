@@ -1,10 +1,11 @@
-﻿@model IEnumerable<PP4.MVC.Models.ViewPelicula>
+﻿@model IEnumerable<PP4.MVC.Models.ViewCompra>
+
 @{
-    ViewBag.Title = "Pelicula";
+    ViewBag.Title = "Reporte de Compra Por Usuario";
 }
 <h2>@ViewBag.Title.</h2>
 <div class="row" style="text-align:left;padding:3px">
-    <a href="~/Salas/Index" class="btn btn-outline-primary">Regresar</a>
+    <a href="~/Compra/Reporte" class="btn btn-outline-primary">Regresar</a>
 
 </div>
 
@@ -15,27 +16,23 @@
 
                 <tr>
                     <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Monto Pagado</th>
+                    <th>ID Persona</th>
                     <th>Nombre de Pelicula</th>
-                    <th>Duracion</th>
-                    <th>Disponibilidad</th>
-                    <th>Horario</th>
                     <th>Sala</th>
                 </tr>
 
                 @foreach (var oElemento in Model)
                 {
                     <tr>
-                        <td>@oElemento.ID_Pelicula</td>
-                        <td>@oElemento.Descripcion_Pelicula</td>
-                        <td>@oElemento.Duracion</td>
-                        <td>@oElemento.Estado</td>
-                        <td>@oElemento.horario</td>
+                        <td>@oElemento.ID_Compra</td>
+                        <td>@oElemento.Fecha</td>
+                        <td>@oElemento.Total_Pagar</td>
+                        <td>@oElemento.ID_persona</td>
+                        <td>@oElemento.Descripcion_peli</td>
                         <td>@oElemento.ID_sala</td>
 
-                        <td>
-                            <a class="btn btn-outline-info" href="~/Compra/Nuevo/@oElemento.ID_Pelicula">Comprar</a>
-
-                        </td>
                     </tr>
                 }
         </table>

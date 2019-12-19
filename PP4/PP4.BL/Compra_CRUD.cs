@@ -62,6 +62,38 @@ namespace PP4.BL
             return null;
         }
 
+        public List<Compra> GetComprabyIDPersona(int Id)
+        {
+            using (DBCPP4 context = new DBCPP4())
+            {
+                try
+                {
+                    return context.Compra.Where(x => x.ID_persona == Id).ToList(); //me muestra el que es por defecto o el primero 
+                }
+                catch (Exception exp)
+                {
+                    Console.WriteLine("ERROR BUSCANDO COMPRA DE PERSONA:  " + exp.Message);
+                }
+            }
+            return null;
+        }
+
+        public List<Compra> GetComprabyIDSala(int Id)
+        {
+            using (DBCPP4 context = new DBCPP4())
+            {
+                try
+                {
+                    return context.Compra.Where(x => x.ID_sala== Id).ToList(); //me muestra el que es por defecto o el primero 
+                }
+                catch (Exception exp)
+                {
+                    Console.WriteLine("ERROR BUSCANDO COMPRA POR SALA:  " + exp.Message);
+                }
+            }
+            return null;
+        }
+
         public void Insert(Compra item)
         {
             using (DBCPP4 context = new DBCPP4())

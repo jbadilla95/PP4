@@ -1,12 +1,15 @@
-﻿@model List<PP4.MVC.Models.ViewSala>
+﻿@model PP4.MVC.Models.ViewSala
+
 @{
     ViewBag.Title = "Nueva Sala";
 }
 
 <h2>@ViewBag.Title</h2>
+<a href="~/Salas/Index" class="btn btn-outline-primary">Regresar</a>
 <!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
 @using (Html.BeginForm("Nuevo", "Salas", FormMethod.Post))
 {
+
     <div class="row">
         <div class="col-sm-12">
             <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
@@ -25,20 +28,11 @@
                     @Html.LabelFor(d => d.Cantidad_disponible)
                     @Html.TextBoxFor(d => d.Cantidad_disponible, "", new { @class = "form-control" })
                 </div>
-                <div>
-                    @Html.ValidationMessageFor(d => d.ID_Asiento, null, new { @class = "danger" })
-                    <div />
-                    <div>
-                        @Html.LabelFor(d => d.ID_Asiento)
-                        @Html.TextBoxFor(d => d.ID_Asiento, "", new { @class = "form-control" })
-                    </div>
-                    <div />
-                    
-                </div>
+                
                 <br />
 
                 <div style="text-align:right">
-                    <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+                    <input value="Guardar" class="w3-button w3-black w3-margin-bottom" type="submit" />
                 </div>
             </div>
         </div>

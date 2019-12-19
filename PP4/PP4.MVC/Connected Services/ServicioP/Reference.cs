@@ -740,6 +740,20 @@ namespace PP4.MVC.ServicioP {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCompras", ReplyAction="*")]
         System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetAllComprasResponse> GetAllComprasAsync(PP4.MVC.ServicioP.GetAllComprasRequest request);
         
+        // CODEGEN: Generating message contract since element name GetcomprasbyIDPersonaResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetcomprasbyIDPersona", ReplyAction="*")]
+        PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse GetcomprasbyIDPersona(PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetcomprasbyIDPersona", ReplyAction="*")]
+        System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse> GetcomprasbyIDPersonaAsync(PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetcomprasbyIDSalaResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetcomprasbyIDSala", ReplyAction="*")]
+        PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse GetcomprasbyIDSala(PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetcomprasbyIDSala", ReplyAction="*")]
+        System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse> GetcomprasbyIDSalaAsync(PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarCompra", ReplyAction="*")]
         void EliminarCompra(int id);
         
@@ -1769,6 +1783,142 @@ namespace PP4.MVC.ServicioP {
         
         public GetAllComprasResponseBody(PP4.MVC.ServicioP.Compra[] GetAllComprasResult) {
             this.GetAllComprasResult = GetAllComprasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetcomprasbyIDPersonaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetcomprasbyIDPersona", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequestBody Body;
+        
+        public GetcomprasbyIDPersonaRequest() {
+        }
+        
+        public GetcomprasbyIDPersonaRequest(PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetcomprasbyIDPersonaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetcomprasbyIDPersonaRequestBody() {
+        }
+        
+        public GetcomprasbyIDPersonaRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetcomprasbyIDPersonaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetcomprasbyIDPersonaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponseBody Body;
+        
+        public GetcomprasbyIDPersonaResponse() {
+        }
+        
+        public GetcomprasbyIDPersonaResponse(PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetcomprasbyIDPersonaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public PP4.MVC.ServicioP.Compra[] GetcomprasbyIDPersonaResult;
+        
+        public GetcomprasbyIDPersonaResponseBody() {
+        }
+        
+        public GetcomprasbyIDPersonaResponseBody(PP4.MVC.ServicioP.Compra[] GetcomprasbyIDPersonaResult) {
+            this.GetcomprasbyIDPersonaResult = GetcomprasbyIDPersonaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetcomprasbyIDSalaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetcomprasbyIDSala", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.MVC.ServicioP.GetcomprasbyIDSalaRequestBody Body;
+        
+        public GetcomprasbyIDSalaRequest() {
+        }
+        
+        public GetcomprasbyIDSalaRequest(PP4.MVC.ServicioP.GetcomprasbyIDSalaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetcomprasbyIDSalaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetcomprasbyIDSalaRequestBody() {
+        }
+        
+        public GetcomprasbyIDSalaRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetcomprasbyIDSalaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetcomprasbyIDSalaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.MVC.ServicioP.GetcomprasbyIDSalaResponseBody Body;
+        
+        public GetcomprasbyIDSalaResponse() {
+        }
+        
+        public GetcomprasbyIDSalaResponse(PP4.MVC.ServicioP.GetcomprasbyIDSalaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetcomprasbyIDSalaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public PP4.MVC.ServicioP.Compra[] GetcomprasbyIDSalaResult;
+        
+        public GetcomprasbyIDSalaResponseBody() {
+        }
+        
+        public GetcomprasbyIDSalaResponseBody(PP4.MVC.ServicioP.Compra[] GetcomprasbyIDSalaResult) {
+            this.GetcomprasbyIDSalaResult = GetcomprasbyIDSalaResult;
         }
     }
     
@@ -2812,6 +2962,56 @@ namespace PP4.MVC.ServicioP {
             PP4.MVC.ServicioP.GetAllComprasRequest inValue = new PP4.MVC.ServicioP.GetAllComprasRequest();
             inValue.Body = new PP4.MVC.ServicioP.GetAllComprasRequestBody();
             return ((PP4.MVC.ServicioP.ServicioSoap)(this)).GetAllComprasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse PP4.MVC.ServicioP.ServicioSoap.GetcomprasbyIDPersona(PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest request) {
+            return base.Channel.GetcomprasbyIDPersona(request);
+        }
+        
+        public PP4.MVC.ServicioP.Compra[] GetcomprasbyIDPersona(int id) {
+            PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest inValue = new PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest();
+            inValue.Body = new PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequestBody();
+            inValue.Body.id = id;
+            PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse retVal = ((PP4.MVC.ServicioP.ServicioSoap)(this)).GetcomprasbyIDPersona(inValue);
+            return retVal.Body.GetcomprasbyIDPersonaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse> PP4.MVC.ServicioP.ServicioSoap.GetcomprasbyIDPersonaAsync(PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest request) {
+            return base.Channel.GetcomprasbyIDPersonaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDPersonaResponse> GetcomprasbyIDPersonaAsync(int id) {
+            PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest inValue = new PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequest();
+            inValue.Body = new PP4.MVC.ServicioP.GetcomprasbyIDPersonaRequestBody();
+            inValue.Body.id = id;
+            return ((PP4.MVC.ServicioP.ServicioSoap)(this)).GetcomprasbyIDPersonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse PP4.MVC.ServicioP.ServicioSoap.GetcomprasbyIDSala(PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest request) {
+            return base.Channel.GetcomprasbyIDSala(request);
+        }
+        
+        public PP4.MVC.ServicioP.Compra[] GetcomprasbyIDSala(int id) {
+            PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest inValue = new PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest();
+            inValue.Body = new PP4.MVC.ServicioP.GetcomprasbyIDSalaRequestBody();
+            inValue.Body.id = id;
+            PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse retVal = ((PP4.MVC.ServicioP.ServicioSoap)(this)).GetcomprasbyIDSala(inValue);
+            return retVal.Body.GetcomprasbyIDSalaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse> PP4.MVC.ServicioP.ServicioSoap.GetcomprasbyIDSalaAsync(PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest request) {
+            return base.Channel.GetcomprasbyIDSalaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PP4.MVC.ServicioP.GetcomprasbyIDSalaResponse> GetcomprasbyIDSalaAsync(int id) {
+            PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest inValue = new PP4.MVC.ServicioP.GetcomprasbyIDSalaRequest();
+            inValue.Body = new PP4.MVC.ServicioP.GetcomprasbyIDSalaRequestBody();
+            inValue.Body.id = id;
+            return ((PP4.MVC.ServicioP.ServicioSoap)(this)).GetcomprasbyIDSalaAsync(inValue);
         }
         
         public void EliminarCompra(int id) {
