@@ -97,6 +97,16 @@ namespace PP4.CM
         }
 
         [WebMethod]
+        public List<Pelicula> GetsalabyidPelicula(int id)
+        {
+            Peliculas_CRUD per = new Peliculas_CRUD();
+
+            return per.Getsalas(id);
+        }
+
+
+
+        [WebMethod]
         public void ActualizarPelicula(Pelicula item)
         {
             Peliculas_CRUD per = new Peliculas_CRUD();
@@ -106,7 +116,7 @@ namespace PP4.CM
         #endregion
         #region CRUD SALAS
         [WebMethod]
-        public void AgregaSala(Sala item)
+        public void AgregaSala(Sala_Cantidad item)
         {
             Sala_CRUD per = new Sala_CRUD();
 
@@ -114,7 +124,7 @@ namespace PP4.CM
         }
 
         [WebMethod]
-        public List<Sala> GetAllSalas()
+        public List<Sala_Cantidad> GetAllSalas()
         {
             Sala_CRUD per = new Sala_CRUD();
 
@@ -130,7 +140,7 @@ namespace PP4.CM
         }
 
         [WebMethod]
-        public Sala GetSalabyid(int id)
+        public Sala_Cantidad GetSalabyid(int id)
         {
             Sala_CRUD per = new Sala_CRUD();
 
@@ -138,7 +148,7 @@ namespace PP4.CM
         }
 
         [WebMethod]
-        public void ActualizarSala(Sala item)
+        public void ActualizarSala(Sala_Cantidad item)
         {
             Sala_CRUD per = new Sala_CRUD();
 

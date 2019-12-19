@@ -13,7 +13,7 @@
             <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
             <div>
                 @Html.ValidationMessageFor(d => d.Descripcion_Pelicula, null, new { @class = "danger" })
-                <div/>
+                <div />
                 <div>
                     @Html.LabelFor(d => d.Descripcion_Pelicula)
                     @Html.TextBoxFor(d => d.Descripcion_Pelicula, "", new { @class = "form-control" })
@@ -29,8 +29,21 @@
                 @Html.TextBoxFor(d => d.Estado, "", new { @class = "form-control" })
 
             </div>
-            
             <br />
+            <div>
+                @Html.LabelFor(d => d.horario)
+                <input type="number" name="horario" value="9" min="9"
+                       max="24" step="1">
+
+            </div>
+
+            <br />
+            <div>
+                @Html.LabelFor(d => d.ID_sala)
+                <input type="number" name="ID_Sala" value="" min="5"
+                       max="24" step="1">
+
+            </div>
 
             <div style="text-align:right">
                 <input value="Guardar" class="btn btn-outline-primary" type="submit" />

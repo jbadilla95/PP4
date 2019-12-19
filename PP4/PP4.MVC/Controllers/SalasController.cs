@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PP4.MVC.Models;
 using PP4.MVC;
-using PP4.MVC.ServicioPP4;
+using PP4.MVC.ServicioP;
 
 namespace PP4.MVC.Controllers
 {
@@ -18,14 +18,16 @@ namespace PP4.MVC.Controllers
             var listasalas = client.GetAllSalas();
             List<ViewSala> lista = new List<ViewSala>();
 
-            foreach (Sala item in listasalas)
+            foreach (Sala_Cantidad item in listasalas)
                 lista.Add(new ViewSala()
                 {
+                    ID_SCantidad = item.ID_SCantidad,
+                    ID_Asiento=item.ID_Asiento,
+                    Cantidad_disponible=item.Cantidad_disponible,
+                    Cantidad_total=item.Cantidad_total,
+                    ID_pelicula=item.ID_pelicula
 
-                ID_Sala = item.ID_Sala,    
-                Desc_sala = item.Desc_sala
-                });
-
+                }) ;
 
             return View(lista);
             
@@ -41,13 +43,17 @@ namespace PP4.MVC.Controllers
         {
             ServicioSoapClient client = new ServicioSoapClient();
 
-            Sala peli = new Sala();
-            peli.Desc_sala = model.Desc_sala;
+            Sala_Cantidad item = new Sala_Cantidad();
+            item.ID_SCantidad = model.ID_SCantidad;
+            item.ID_Asiento = 1;
+            item.Cantidad_disponible = model.Cantidad_disponible;
+            item.Cantidad_total = model.Cantidad_total;
+            item.ID_pelicula = model.ID_pelicula;
             try
             {
                 if (ModelState.IsValid)
                 {
-                    client.AgregaSala(peli);
+                    client.AgregaSala(item);
 
                     return Redirect("~/Salas/Index");
                 }
@@ -65,12 +71,15 @@ namespace PP4.MVC.Controllers
         public ActionResult Editar(int id)
         {
             ServicioSoapClient client = new ServicioSoapClient();
-            var item = client.GetSalabyid(id);
-            ViewSala model = new ViewSala();
+            var model = client.GetSalabyid(id);
+            ViewSala item = new ViewSala();
 
-            model.ID_Sala = item.ID_Sala;
-            model.Desc_sala = item.Desc_sala;
-           
+            item.ID_SCantidad = model.ID_SCantidad;
+            item.ID_Asiento = model.ID_Asiento;
+            item.Cantidad_disponible = model.Cantidad_disponible;
+            item.Cantidad_total = model.Cantidad_total;
+            item.ID_pelicula = model.ID_pelicula;
+
 
             return View(model); //acá lo voy a devolver , en este caso lo estoy enviando al ootro metodo de HTTPPOST
 
@@ -81,9 +90,8 @@ namespace PP4.MVC.Controllers
         {
             ServicioSoapClient client = new ServicioSoapClient();
 
-            Sala sala = new Sala();
-            sala.ID_Sala = model.ID_Sala;
-            sala.Desc_sala = model.Desc_sala;
+            Sala_Cantidad sala = new Sala_Cantidad();
+           
             try
             {
                 if (ModelState.IsValid)
@@ -112,5 +120,7 @@ namespace PP4.MVC.Controllers
 
             return Redirect("~/Salas/Index/");
         }
+
+        
     }
 }

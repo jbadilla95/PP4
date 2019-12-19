@@ -25,5 +25,9 @@ namespace PP4.MVC.Models
         [Required]
         [Display(Name = "Horario")]
         public int horario { get; set; }
+
+        [Required]
+        [Display(Name = "ID sala proyeccion")]
+        public int ID_sala { get; set; }
     }
 }

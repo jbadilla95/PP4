@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using PP4.MVC.Models;
 using PP4.MVC.Models.ViewsModels;
-using PP4.MVC.ServicioPP4;
+using PP4.MVC.ServicioP;
 
 
 
@@ -31,8 +31,10 @@ namespace PP4.MVC.Controllers
             peli.Duracion = model.Duracion;
             peli.Estado = model.Estado;
             peli.horario = model.horario;
-            
-            
+            peli.ID_sala = model.ID_sala;
+
+
+
             try
             {
                 if (ModelState.IsValid)
@@ -64,7 +66,11 @@ namespace PP4.MVC.Controllers
                 ID_Pelicula = item.ID_Pelicula,
                 Descripcion_Pelicula =item.Descripcion_Pelicula,
                 Duracion = item.Duracion,
-                Estado = item.Estado
+                Estado = item.Estado,
+                horario = item.horario,
+                ID_sala=item.ID_sala
+
+
 
             });
         
@@ -81,7 +87,9 @@ namespace PP4.MVC.Controllers
             model.Descripcion_Pelicula = item.Descripcion_Pelicula;
             model.Duracion = item.Duracion;
             model.Estado = item.Estado;
-            
+            model.ID_sala = item.ID_sala;
+
+
             return View(model); //acá lo voy a devolver 
             
         }
@@ -96,6 +104,7 @@ namespace PP4.MVC.Controllers
             peli.Duracion = model.Duracion;
             peli.Estado = model.Estado;
             peli.ID_Pelicula = model.ID_Pelicula;
+            peli.ID_sala = model.ID_sala;
             try
             {
                 if (ModelState.IsValid)
@@ -126,6 +135,31 @@ namespace PP4.MVC.Controllers
             client1.EliminarPelicula(id);
 
             return Redirect("~/Pelicula/Index/");
+        }
+
+        [HttpGet]
+        public ActionResult Verifica_peli(int id)
+        {
+            ServicioSoapClient client = new ServicioSoapClient();
+            var listapeliculas = client.GetsalabyidPelicula(id);
+            List<ViewPelicula> lista = new List<ViewPelicula>();
+            
+            foreach (Pelicula item in listapeliculas)
+                lista.Add(new ViewPelicula()
+                {
+                    ID_Pelicula = item.ID_Pelicula,
+                    Descripcion_Pelicula = item.Descripcion_Pelicula,
+                    Duracion = item.Duracion,
+                    Estado = item.Estado,
+                    horario = item.horario,
+                    ID_sala = item.ID_sala
+
+
+
+                });
+
+
+            return View(lista);
         }
     }
 }

@@ -62,6 +62,22 @@ namespace PP4.BL
             return null;
         }
 
+        public List<Pelicula> Getsalas(int id)
+        {
+            using (DBCPP4 context = new DBCPP4())
+            {
+                try
+                {
+                    return context.Pelicula.Where(x => x.ID_sala == id).ToList();
+                }
+                catch (Exception exp)
+                {
+                    Console.WriteLine("ERROR :  " + exp.Message);
+                }
+            }
+            return null;
+        }
+
         public void Insert(Pelicula item)
         {
             using (DBCPP4 context = new DBCPP4())

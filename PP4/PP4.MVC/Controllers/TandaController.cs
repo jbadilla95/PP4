@@ -1,5 +1,5 @@
 ﻿using PP4.MVC.Models.ViewsModels;
-using PP4.MVC.ServicioPP4;
+using PP4.MVC.ServicioP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +14,15 @@ namespace PP4.MVC.Controllers
         public ActionResult Index()
         {
             ServicioSoapClient client = new ServicioSoapClient();
-            var listaTandas = client.GetAllTandas();
+            var listatanda = client.GetAllTandas();
             List<ViewTanda> lista = new List<ViewTanda>();
 
-            foreach (Tanda item in listaTandas)
+            foreach (Tanda item in listatanda)
                 lista.Add(new ViewTanda()
                 {
-                 
-                   ID_pelicula=item.ID_pelicula,
-                   ID_sala=item.ID_sala,
-                   ID_tanda=item.ID_tanda
-
+                    ID_pelicula=item.ID_pelicula,
+                    ID_sala=item.ID_sala,
+                    ID_tanda=item.ID_tanda
                 });
 
 

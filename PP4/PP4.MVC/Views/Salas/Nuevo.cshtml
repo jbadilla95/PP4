@@ -1,5 +1,4 @@
-﻿@model PP4.MVC.Models.ViewSala
-
+﻿@model List<PP4.MVC.Models.ViewSala>
 @{
     ViewBag.Title = "Nueva Sala";
 }
@@ -12,19 +11,39 @@
         <div class="col-sm-12">
             <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
             <div>
-                @Html.ValidationMessageFor(d => d.Desc_sala, null, new { @class = "danger" })
+                @Html.ValidationMessageFor(d => d.Cantidad_total, null, new { @class = "danger" })
                 <div />
                 <div>
-                    @Html.LabelFor(d => d.Desc_sala)
-                    @Html.TextBoxFor(d => d.Desc_sala, "", new { @class = "form-control" })
+                    @Html.LabelFor(d => d.Cantidad_total)
+                    @Html.TextBoxFor(d => d.Cantidad_total, "", new { @class = "form-control" })
                 </div>
-            </div>            
-            <br />
-
-            <div style="text-align:right">
-                <input value="Guardar" class="btn btn-outline-primary" type="submit" />
             </div>
+            <div>
+                @Html.ValidationMessageFor(d => d.Cantidad_disponible, null, new { @class = "danger" })
+                <div />
+                <div>
+                    @Html.LabelFor(d => d.Cantidad_disponible)
+                    @Html.TextBoxFor(d => d.Cantidad_disponible, "", new { @class = "form-control" })
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(d => d.ID_Asiento, null, new { @class = "danger" })
+                    <div />
+                    <div>
+                        @Html.LabelFor(d => d.ID_Asiento)
+                        @Html.TextBoxFor(d => d.ID_Asiento, "", new { @class = "form-control" })
+                    </div>
+                    <div />
+                    <div>
+                        @Html.LabelFor(d => d.ID_pelicula)
+                        @Html.TextBoxFor(d => d.ID_pelicula, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
 
+                <div style="text-align:right">
+                    <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+                </div>
+            </div>
         </div>
     </div>
 }

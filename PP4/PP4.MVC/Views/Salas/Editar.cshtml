@@ -1,7 +1,10 @@
 ﻿@model PP4.MVC.Models.ViewSala
+
+
+
 <!--Acá es lo que estoy recibiendo-->
 @{
-    ViewBag.Title = "Editar Sala";
+    ViewBag.Title = "Editar Pelicula";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,15 +14,29 @@
     <div class="row">
         <div class="col-sm-12">
             <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
-            @Html.HiddenFor(d => d.ID_Sala) <!--Me guardará el ID y se irá en la misma solicitud que estoy creando-->
+            @Html.HiddenFor(d => d.ID_SCantidad) <!--Me guardará el ID y se irá en la misma solicitud que estoy creando-->
+            @Html.HiddenFor(d=>d.ID_Asiento)
             <div>
-                @Html.ValidationMessageFor(d => d.Desc_sala, null, new { @class = "danger" })
-                @Html.LabelFor(d => d.Desc_sala)
-                @Html.TextBoxFor(d => d.Desc_sala, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.ID_SCantidad, null, new { @class = "danger" })
+                @Html.LabelFor(d => d.ID_SCantidad)
+                @Html.TextBoxFor(d => d.ID_SCantidad, "", new { @class = "form-control" })
 
             </div>
-          
-          
+            <div>
+                @Html.LabelFor(d => d.ID_pelicula)
+                @Html.TextBoxFor(d => d.ID_pelicula, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Cantidad_total)
+                @Html.TextBoxFor(d => d.Cantidad_total, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Cantidad_disponible)
+                @Html.TextBoxFor(d => d.Cantidad_disponible, "", new { @class = "form-control" })
+
+            </div>
 
             <br />
 
@@ -30,3 +47,4 @@
         </div>
     </div>
 }
+

@@ -8,10 +8,21 @@ namespace PP4.MVC.Models
 {
     public class ViewSala
     {
-        public int ID_Sala { get; set; }
+        public int ID_SCantidad { get; set; }
+        public int ID_Asiento { get; set; }
 
         [Required]
-        [Display(Name = "Descripcion de la sala")]
-        public string Desc_sala { get; set; }
+        [Display(Name = "Capacidad de Sala")]
+        public int Cantidad_total { get; set; }
+        public int Cantidad_disponible { get; set; }
+
+        [Required]
+        [Display(Name = "Identificador de Pelicula")]
+        public int ID_pelicula { get; set; }
+
+       
+
+
+
     }
 }

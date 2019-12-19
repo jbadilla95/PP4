@@ -8,7 +8,7 @@ using PP4.DAL;
 
 namespace PP4.BL
 {
-    public class Sala_CRUD : IRepositorio<Sala>
+    public class Sala_CRUD : IRepositorio<Sala_Cantidad>
     {
         public void Delete(int Id)
         {
@@ -16,10 +16,10 @@ namespace PP4.BL
             {
                 try
                 {
-                    var toDelete = context.Sala.Where(x => x.ID_Sala == Id).SingleOrDefault();
+                    var toDelete = context.Sala_Cantidad.Where(x => x.ID_SCantidad== Id).SingleOrDefault();
                     if (toDelete != null) // si la tabla no está vacia entonces ingresará a eleiminar , de lo contrario no es necesario que vaya a consultar 
                     {
-                        context.Sala.Remove(toDelete);
+                        context.Sala_Cantidad.Remove(toDelete);
                         context.SaveChanges();
                     }
                 }
@@ -30,13 +30,13 @@ namespace PP4.BL
             }
         }
 
-        public List<Sala> Get()
+        public List<Sala_Cantidad> Get()
         {
             using (DBCPP4 context = new DBCPP4())
             {
                 try
                 {
-                    return context.Sala.ToList();
+                    return context.Sala_Cantidad.ToList();
                 }
                 catch (Exception exp)
                 {
@@ -46,13 +46,13 @@ namespace PP4.BL
             return null;
         }
 
-        public Sala GetrByID(int Id)
+        public Sala_Cantidad GetrByID(int Id)
         {
             using (DBCPP4 context = new DBCPP4())
             {
                 try
                 {
-                    return context.Sala.Where(x => x.ID_Sala == Id).SingleOrDefault(); //me muestra el que es por defecto o el primero 
+                    return context.Sala_Cantidad.Where(x => x.ID_SCantidad == Id).SingleOrDefault(); //me muestra el que es por defecto o el primero 
                 }
                 catch (Exception exp)
                 {
@@ -62,13 +62,13 @@ namespace PP4.BL
             return null;
         }
 
-        public void Insert(Sala item)
+        public void Insert(Sala_Cantidad item)
         {
             using (DBCPP4 context = new DBCPP4())
             {
                 try
                 {
-                    context.Sala.Add(item);
+                    context.Sala_Cantidad.Add(item);
                     context.SaveChanges();
                 }
                 catch (Exception exp)
@@ -83,15 +83,19 @@ namespace PP4.BL
             throw new NotImplementedException();
         }
 
-        public void Update(Sala item)
+        public void Update(Sala_Cantidad item)
         {
             using (DBCPP4 context = new DBCPP4())
             {
                 try
                 {
 
-                    var updato = context.Sala.Where(x => x.ID_Sala == item.ID_Sala).SingleOrDefault();  //first last or tolist
-                    updato.Desc_sala = item.Desc_sala;
+                    var updato = context.Sala_Cantidad.Where(x => x.ID_SCantidad == item.ID_SCantidad).SingleOrDefault();  //first last or tolist
+                    updato.ID_SCantidad = item.ID_SCantidad;
+                    updato.ID_Asiento = item.ID_Asiento;
+                    updato.Cantidad_total = item.Cantidad_total;
+                    updato.Cantidad_disponible = item.Cantidad_disponible;
+                    updato.ID_pelicula = item.ID_pelicula;
 
                     //preguntar si hay forma de no hacerlo uno a uno 
 

@@ -20,9 +20,13 @@ namespace PP4.DAL
 
         public int horario { get; set; }
 
+        public int ID_sala { get; set; }
+
 
 
         [XmlIgnore]
         public virtual ICollection<Tanda> ID_Tanda { get; set; }
+
+        
     }
 }

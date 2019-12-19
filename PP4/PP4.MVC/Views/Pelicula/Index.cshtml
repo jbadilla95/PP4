@@ -18,7 +18,8 @@
                     <th>Nombre de Pelicula</th>
                     <th>Duracion</th>
                     <th>Disponibilidad</th>
-                    <th></th>
+                    <th>Horario</th>
+                    <th>Sala</th>
                 </tr>
 
                 @foreach (var oElemento in Model)
@@ -28,6 +29,8 @@
                         <td>@oElemento.Descripcion_Pelicula</td>
                         <td>@oElemento.Duracion</td>
                         <td>@oElemento.Estado</td>
+                        <td>@oElemento.horario</td>
+                        <td>@oElemento.ID_sala</td>
 
                         <td>
                             <a class="btn btn-outline-info" href="~/Pelicula/Editar/@oElemento.ID_Pelicula">Editar</a>

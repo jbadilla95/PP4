@@ -23,9 +23,7 @@ namespace PP4.DAL
             public virtual DbSet<Compra> Compra { get; set; }
 
         public virtual DbSet<Pelicula> Pelicula { get; set; }
-        public virtual DbSet<Sala> Sala { get; set; }
         public virtual DbSet<Persona> Persona { get; set; }
-
         public virtual DbSet<Sala_Cantidad> Sala_Cantidad { get; set; }
 
         public virtual DbSet<Tanda> Tandas { get; set; }

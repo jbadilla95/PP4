@@ -92,7 +92,7 @@ namespace PP4.BL
 
                     var updato = context.Compra.Where(x => x.ID_Compra == item.ID_Compra).SingleOrDefault();  //first last or tolist
                     updato.Fecha = item.Fecha;
-                    updato.ID_tanda = item.ID_tanda;
+                    
                     updato.Total_Pagar = item.Total_Pagar;
                     updato.ID_persona = item.ID_persona;
                     //preguntar si hay forma de no hacerlo uno a uno 

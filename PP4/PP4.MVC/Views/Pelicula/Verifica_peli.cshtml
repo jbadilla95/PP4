@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PP4.MVC.Models.ViewPelicula>
+@{
+    ViewBag.Title = "Pelicula";
+}
+<h2>@ViewBag.Title.</h2>
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Salas/Index" class="btn btn-outline-primary">Regresar</a>
+
+</div>
+
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead class="thead-light">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Pelicula</th>
+                    <th>Duracion</th>
+                    <th>Disponibilidad</th>
+                    <th>Horario</th>
+                    <th>Sala</th>
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <td>@oElemento.ID_Pelicula</td>
+                        <td>@oElemento.Descripcion_Pelicula</td>
+                        <td>@oElemento.Duracion</td>
+                        <td>@oElemento.Estado</td>
+                        <td>@oElemento.horario</td>
+                        <td>@oElemento.ID_sala</td>
+
+                        <td>
+                            <a class="btn btn-outline-info" href="~/Compra/Nuevo/@oElemento.ID_Pelicula">Comprar</a>
+                            
+                        </td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>
+
+

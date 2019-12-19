@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using PP4.MVC.Models;
 using PP4.MVC.Models.ViewsModels;
-using PP4.MVC.ServicioPP4;
+using PP4.MVC.ServicioP;
 
 namespace PP4.MVC.Controllers
 {

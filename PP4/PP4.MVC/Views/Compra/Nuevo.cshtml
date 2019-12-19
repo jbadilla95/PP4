@@ -1,43 +1,56 @@
-﻿
-@model PP4.MVC.Models.ViewCompra
+﻿@model PP4.MVC.Models.ViewCompra
 
-
-
+<!--Acá es lo que estoy recibiendo-->
 @{
-    ViewBag.Title = "Compra";
-    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+    ViewBag.Title = " Realizar Compra";
 }
 
 <h2>@ViewBag.Title</h2>
+<!-- en html llamo para crear un formaulario con beginform, nuevo es el metodo, persona es por medio del controler que uso y el .post me ayuda a crear el form -->
 @using (Html.BeginForm("Nuevo", "Compra", FormMethod.Post))
 {
     <div class="row">
         <div class="col-sm-12">
             <!--estos son los helper de html para poder hacer el form, el form-contrl le da un estilo al textbox-->
-            <div>
-                @Html.LabelFor(d => d.ID_persona)
-                @Html.DropDownList("ID_persona", items, "Seleccione un Usuario", new { @class = "form-control" })
-            </div>
-            
-            <br/> <!--Usado para dar espacios-->
-            <div>
-                <!--Campo para la fecha-->
-                @Html.Label("Seleccione una Fecha de compra") <br />
-                <input type="date" name="Fecha de Compra" min="2019-12-17" max="2019-12-31" />
-            </div>
-          <br/>
-          <div>
-              <!--Cantidad de Entradas-->
-              <label for="Total_Pagar">Cantidad de Entradas</label> <br/>
-              <input type="number" name="Total_Pagar" value="1" min="1" max="10" step="1" />
 
-          </div>
+            <div>
+                @Html.ValidationMessageFor(d => d.ID_persona, null, new { @class = "danger" })
+                @Html.LabelFor(d => d.ID_persona)
+                @Html.TextBoxFor(d => d.ID_persona, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Descripcion_peli)
+                @Html.TextBoxFor(d => d.Descripcion_peli, "", new { @class = "form-control" })
+
+            </div>
+            <div>
+                @Html.LabelFor(d => d.ID_sala)
+                @Html.TextBoxFor(d => d.ID_sala, "", new { @class = "form-control" })
+
+            </div>
+            <br />
+            <div>
+                @Html.LabelFor(d => d.Fecha)<br />
+                <input type="date" name="fecha" min="2019-12-18"
+                       max="2019-12-31" step="1">
+
+            </div>
+
+
+            <div>
+                @Html.LabelFor(d => d.Total_Pagar)<br />
+                <input type="number" name="Total_Pagar" value="1" min="1"
+                       max="4" step="1">
+
+            </div>
             <br />
 
             <div style="text-align:right">
-                <input value="Guardar" class="btn btn-outline-primary" type="submit" />
+                <input value="Guardar" class="btn btn-primary" type="submit" />
             </div>
 
         </div>
     </div>
 }
+
