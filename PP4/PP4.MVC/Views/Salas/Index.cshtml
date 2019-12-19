@@ -3,22 +3,25 @@
     ViewBag.Title = "Datos Sala";
 }
 <h2>@ViewBag.Title.</h2>
+
+ 
 <div class="row" style="text-align:left;padding:3px">
-    <a href="~/Salas/Nuevo" class="btn btn-outline-primary">Nuevo</a>
+    <a href="~/Salas/Nuevo" class="btn btn-outline-success">Nuevo</a>
 
 </div>
 
+
 <div class=" row">
     <div class="col-md-12">
-        <table class="table table-hover">
-            <thead class="thead-light">
+        <table class="table">
+            <thead class="thead-dark">
 
                 <tr>
                     <th>ID</th>
                     <th>Espacio Total</th>
                     <th>Espacio Disponible</th>
-                    <th>Identificador de Pelicula</th>
-                    
+
+
                 </tr>
 
                 @foreach (var oElemento in Model)
@@ -27,18 +30,18 @@
                         <td>@oElemento.ID_SCantidad</td>
                         <td>@oElemento.Cantidad_total</td>
                         <td>@oElemento.Cantidad_disponible</td>
-                        <td>@oElemento.ID_pelicula</td>
-                       
+
+
                         <td>
                             <a class="btn btn-outline-info" href="~/Salas/Editar/@oElemento.ID_SCantidad">Editar</a>
                             <a href="~/Salas/Eliminar/@oElemento.ID_SCantidad" class="btn btn-outline-danger" role="button">Eliminar</a>
-                            <a href="~/Pelicula/Verifica_peli/@oElemento.ID_SCantidad" class="btn btn-outline-info" role="button">Verificar Pelicula</a>
-                            <a class="btn btn-outline-info" href="~/Compra/Nuevo">Comprar</a>
+                            <a class="btn btn-outline-secondary" href="~/Pelicula/Verifica_peli/@oElemento.ID_SCantidad">Verificar Pelicula</a>
                         </td>
                     </tr>
                 }
         </table>
     </div>
 </div>
+
 
 

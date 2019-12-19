@@ -6,57 +6,53 @@
     <title>@ViewBag.Title Cinema Center</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Just an image -->
-        <img src="~/Imagenes/images.png" width="30" height="30" alt="">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif
+        }
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="~/Home/About">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Salas/Index">Salas</a>
-                </li>
-                <!-- Links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Pelicula/Index">Peliculas</a>
+        .mySlides {
+            display: none
+        }
+    </style>
+    <body>
 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Persona/About">Nuestros Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Reportes/Index">Reporte</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="we're working on it" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-black w3-card">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a href="~/Home/About" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                <a href="~/Salas/Index" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SALAS</a>
+                <a href="~/Pelicula/Index" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PELICULA</a>
+                <a href="~/Persona/About" class="w3-bar-item w3-button w3-padding-large w3-hide-small">USUARIOS</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="~/Compra/Reporte" class="w3-bar-item w3-button">Reporte Compra</a>
+
+                    </div>
+                </div>
+                <a href="javascript:void(0)" class="w3-padding-large w3-hover-white w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+            </div>
         </div>
-    </nav>
-   
-    <!-- A grey horizontal navbar that becomes vertical on small screens -->
-    <div class="container"></div>
+            <!-- A grey horizontal navbar that becomes vertical on small screens -->
+            <div class="container"></div>
 
-    
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year -Jeison Badilla</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year -Jeison Badilla</p>
+                </footer>
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/jqueryval")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+    </body>
 </html>

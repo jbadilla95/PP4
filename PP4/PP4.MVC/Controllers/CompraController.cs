@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Windows;
 
 namespace PP4.MVC.Controllers
 {
@@ -65,33 +66,66 @@ namespace PP4.MVC.Controllers
         [HttpPost]
         public ActionResult Nuevo(ViewCompra item)
         {
-            ServicioSoapClient client = new ServicioSoapClient();
+            ServicioSoapClient client = new ServicioSoapClient();           
 
-            Compra model = new Compra();
-            model.Descripcion_peli = item.Descripcion_peli;
-            model.Fecha = item.Fecha;
-            model.ID_persona = item.ID_persona;
-            model.ID_sala = item.ID_sala;
-            model.Total_Pagar = item.Total_Pagar * 3800;
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    client.AgregaCompra(model);
+           var verificasala = client.GetSalabyid(item.ID_sala); //verifico que la sala exista
+            if (verificasala != null) {
+                var verificauser = client.Getbyid(item.ID_persona); //verifico usuario
+                  if (verificauser != null) 
+                    {
+                    if (item.Total_Pagar<=verificasala.Cantidad_disponible) { //a la cantidad disponible de la sala le rebajo un espacio 
+                        verificasala.Cantidad_disponible = (verificasala.Cantidad_disponible - 1);
+                        client.ActualizarSala(verificasala);
 
-                    return Redirect("~/Salas/Index/");
+                        Compra model = new Compra();
+                        model.Descripcion_peli = item.Descripcion_peli;
+                        model.Fecha = item.Fecha;
+                        model.ID_persona = item.ID_persona;
+                        model.ID_sala = item.ID_sala;
+                        model.Total_Pagar = item.Total_Pagar * 3800;
+
+                        client.AgregaCompra(model);
+
+                        return Redirect("~/Salas/Index/");
+                    }
+
+                   }
+                    
                 }
-
-                return View(model);
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-
-            }
+               
+            return View(item);
 
         }
 
+       
+
+      
+        public ActionResult Reporte()
+        {
+            ServicioSoapClient client = new ServicioSoapClient();
+            var listaCompras = client.GetAllCompras();
+            List<ViewCompra> lista = new List<ViewCompra>();
+
+            foreach (Compra item in listaCompras)
+                lista.Add(new ViewCompra()
+                {
+                   Descripcion_peli=item.Descripcion_peli,
+                   Fecha=item.Fecha,
+                   ID_Compra=item.ID_Compra,
+                   ID_persona=item.ID_persona,
+                   ID_sala=item.ID_sala,
+                   Total_Pagar=item.Total_Pagar
+
+
+
+
+                });
+
+
+            return View(lista);
+           
+        }
+
+        //debe de existir un metodo que me devuelva a la normalidad la cantidad disponible luego de que se acabe el dia de venta
     }
 }

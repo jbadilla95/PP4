@@ -58,6 +58,7 @@
     <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.21\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -270,18 +271,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Imagenes\bici.png" />
-    <Content Include="Imagenes\image1.jpg" />
-    <Content Include="Imagenes\image2.jpg" />
+    <Content Include="Imagenes\cinema1.jpg" />
+    <Content Include="Imagenes\cinema2.jpg" />
+    <Content Include="Imagenes\cinema3.jpg" />
+    <Content Include="Imagenes\cinema4.jpg" />
     <Content Include="Imagenes\image3.jpg" />
-    <Content Include="Imagenes\image4.jpg" />
-    <Content Include="Imagenes\image5.jpg" />
     <Content Include="Imagenes\image6.jpg" />
-    <Content Include="Imagenes\image7.jpg" />
     <Content Include="Imagenes\images %281%29.png" />
-    <Content Include="Imagenes\images %282%29.png" />
-    <Content Include="Imagenes\images.png" />
-    <Content Include="Imagenes\sit_image.jpg" />
+    <Content Include="Imagenes\images.jpg" />
+    <Content Include="Imagenes\la.jpg" />
+    <Content Include="Imagenes\ny.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -365,6 +364,7 @@
     <Content Include="Views\Pelicula\Verifica_peli.cshtml" />
     <Content Include="Views\Salas\Nuevo.cshtml" />
     <Content Include="Views\Salas\Editar.cshtml" />
+    <Content Include="Views\Compra\Reporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

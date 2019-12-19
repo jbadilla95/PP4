@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PP4.MVC.Models.ViewCompra>
+
+@{
+    ViewBag.Title = "Datos de Compras";
+}
+<h2>@ViewBag.Title.</h2>
+
+<div class="row" style="text-align:left;padding:3px">
+    <a href="~/Salas/Index" class="btn btn-outline-primary">Regresar</a>
+
+</div>
+
+<div class=" row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead class="thead-dark">
+
+
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Total de Compra</th>
+                    <th>Persona Identificador</th>
+                    <th>Pelicula</th>
+                    <th>Sala Proyectada</th>
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <td>@oElemento.ID_Compra</td>
+                        <td>@oElemento.Fecha</td>
+                        <td>@oElemento.Total_Pagar</td>
+                        <td>@oElemento.ID_persona</td>
+                        <td>@oElemento.Descripcion_peli</td>
+                        <td>@oElemento.ID_sala</td>
+
+
+                        <td>
+                            <a class="btn btn-outline-success" href="~/Persona/Editar/@oElemento.ID_persona">Por Persona</a>
+                            <a href="~/Persona/Eliminar/@oElemento.ID_sala" class="btn btn-outline-secondary" role="button">Ppor Sala</a>
+                        </td>
+                    </tr>
+                }
+        </table>
+    </div>
+</div>
+
+

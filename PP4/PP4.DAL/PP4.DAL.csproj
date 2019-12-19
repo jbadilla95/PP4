@@ -109,6 +109,10 @@
     <Compile Include="Migrations\201912182131493_25-12.designer.cs">
       <DependentUpon>201912182131493_25-12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912191406299_30-12.cs" />
+    <Compile Include="Migrations\201912191406299_30-12.designer.cs">
+      <DependentUpon>201912191406299_30-12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pelicula.cs" />
     <Compile Include="Persona.cs" />
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912182131493_25-12.resx">
       <DependentUpon>201912182131493_25-12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912191406299_30-12.resx">
+      <DependentUpon>201912191406299_30-12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

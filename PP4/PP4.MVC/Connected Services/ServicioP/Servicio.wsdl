@@ -167,7 +167,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="ID_Asiento" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Cantidad_total" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Cantidad_disponible" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ID_pelicula" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="AgregaSalaResponse">

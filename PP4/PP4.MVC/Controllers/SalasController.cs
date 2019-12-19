@@ -25,7 +25,7 @@ namespace PP4.MVC.Controllers
                     ID_Asiento=item.ID_Asiento,
                     Cantidad_disponible=item.Cantidad_disponible,
                     Cantidad_total=item.Cantidad_total,
-                    ID_pelicula=item.ID_pelicula
+                   
 
                 }) ;
 
@@ -48,7 +48,7 @@ namespace PP4.MVC.Controllers
             item.ID_Asiento = 1;
             item.Cantidad_disponible = model.Cantidad_disponible;
             item.Cantidad_total = model.Cantidad_total;
-            item.ID_pelicula = model.ID_pelicula;
+          
             try
             {
                 if (ModelState.IsValid)
@@ -78,7 +78,7 @@ namespace PP4.MVC.Controllers
             item.ID_Asiento = model.ID_Asiento;
             item.Cantidad_disponible = model.Cantidad_disponible;
             item.Cantidad_total = model.Cantidad_total;
-            item.ID_pelicula = model.ID_pelicula;
+          
 
 
             return View(model); //acá lo voy a devolver , en este caso lo estoy enviando al ootro metodo de HTTPPOST

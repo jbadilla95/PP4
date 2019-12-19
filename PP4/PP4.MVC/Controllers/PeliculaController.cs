@@ -137,7 +137,7 @@ namespace PP4.MVC.Controllers
             return Redirect("~/Pelicula/Index/");
         }
 
-        [HttpGet]
+       
         public ActionResult Verifica_peli(int id)
         {
             ServicioSoapClient client = new ServicioSoapClient();

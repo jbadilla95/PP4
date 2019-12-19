@@ -16,7 +16,7 @@ namespace PP4.BL
             {
                 try
                 {
-                    var toDelete = context.Sala_Cantidad.Where(x => x.ID_SCantidad== Id).SingleOrDefault();
+                    var toDelete = context.Sala_Cantidad.Where(x => x.ID_SCantidad == Id).SingleOrDefault();
                     if (toDelete != null) // si la tabla no está vacia entonces ingresará a eleiminar , de lo contrario no es necesario que vaya a consultar 
                     {
                         context.Sala_Cantidad.Remove(toDelete);
@@ -95,7 +95,7 @@ namespace PP4.BL
                     updato.ID_Asiento = item.ID_Asiento;
                     updato.Cantidad_total = item.Cantidad_total;
                     updato.Cantidad_disponible = item.Cantidad_disponible;
-                    updato.ID_pelicula = item.ID_pelicula;
+
 
                     //preguntar si hay forma de no hacerlo uno a uno 
 
@@ -111,5 +111,8 @@ namespace PP4.BL
 
             }
         }
-    }
+
+           
+            
+        }
 }

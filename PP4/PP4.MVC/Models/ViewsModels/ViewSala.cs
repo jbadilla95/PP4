@@ -16,9 +16,7 @@ namespace PP4.MVC.Models
         public int Cantidad_total { get; set; }
         public int Cantidad_disponible { get; set; }
 
-        [Required]
-        [Display(Name = "Identificador de Pelicula")]
-        public int ID_pelicula { get; set; }
+        
 
        
 

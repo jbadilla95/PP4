@@ -272,8 +272,6 @@ namespace PP4.MVC.ServicioP {
         
         private int Cantidad_disponibleField;
         
-        private int ID_peliculaField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -332,19 +330,6 @@ namespace PP4.MVC.ServicioP {
                 if ((this.Cantidad_disponibleField.Equals(value) != true)) {
                     this.Cantidad_disponibleField = value;
                     this.RaisePropertyChanged("Cantidad_disponible");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int ID_pelicula {
-            get {
-                return this.ID_peliculaField;
-            }
-            set {
-                if ((this.ID_peliculaField.Equals(value) != true)) {
-                    this.ID_peliculaField = value;
-                    this.RaisePropertyChanged("ID_pelicula");
                 }
             }
         }

@@ -29,25 +29,25 @@
                 @Html.TextBoxFor(d => d.ID_sala, "", new { @class = "form-control" })
 
             </div>
-            <br />
+            <br/>
             <div>
-                @Html.LabelFor(d => d.Fecha)<br />
+                @Html.LabelFor(d => d.Fecha)<br/>
                 <input type="date" name="fecha" min="2019-12-18"
                        max="2019-12-31" step="1">
 
             </div>
-
+            <br/>
 
             <div>
-                @Html.LabelFor(d => d.Total_Pagar)<br />
-                <input type="number" name="Total_Pagar" value="1" min="1"
+                @Html.LabelFor(d => d.Total_Pagar)<br/>
+                <input type="number" name="Total_Pagar" value="0" min="1"
                        max="4" step="1">
 
             </div>
             <br />
 
             <div style="text-align:right">
-                <input value="Guardar" class="btn btn-primary" type="submit" />
+                <input value="Comprar" class="btn btn-primary" type="submit" />
             </div>
 
         </div>

@@ -17,7 +17,7 @@ namespace PP4.DAL
         public int Cantidad_total { get; set; }
         public int Cantidad_disponible { get; set; }
 
-        public int ID_pelicula { get; set; }
+       
 
 
 
